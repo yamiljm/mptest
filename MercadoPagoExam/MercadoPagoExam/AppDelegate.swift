@@ -9,13 +9,19 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //TODO: Borrar. Solo para testeo
+        let paymentService = PaymentMethodsService(delegate: self)
+        
+        paymentService.retrivePaymentMethods()
+        
         return true
     }
 
@@ -41,6 +47,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+//TODO: borrar. solo para testeo
+    func updatePaymentMethods(_ paymentMethods: [PaymentMethod]?){
+        paymentMethods?.forEach({ (payment: PaymentMethod) in
+            print("Name: \(String(describing: payment.name))\n")
+        })
+    }
+    
+    func informError(_ error: Error) {
+        print("ERROR \(error.localizedDescription)")
+    }
+    
 }
 
