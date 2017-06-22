@@ -33,6 +33,7 @@ final class PaymentMethodsService {
             }
             
             var paymentMethods = [PaymentMethod]()
+            
             for paymentMethodJson in json {
                 if let onePaymentMethod = PaymentMethod(json: paymentMethodJson) {
                     paymentMethods.append(onePaymentMethod)
