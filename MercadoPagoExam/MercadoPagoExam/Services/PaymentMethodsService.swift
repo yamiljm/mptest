@@ -17,32 +17,55 @@ final class PaymentMethodsService {
     init(delegate: PaymentMethodsServiceDelegate) {
         self.delegate = delegate
     }
-    
+
     func retrivePaymentMethods() {
         
-        apiConnector.retrievePaymentMethods { (json: [[String : Any]]?, error: Error?) in
-            
-            if let error = error {
-                self.delegate.informError(error)
-                return
-            }
-            
-            guard let json = json else {
-                self.delegate.updatePaymentMethods(nil)
-                return
-            }
-            
-            var paymentMethods = [PaymentMethod]()
-            
-            for paymentMethodJson in json {
-                if let onePaymentMethod = PaymentMethod(json: paymentMethodJson) {
-                    paymentMethods.append(onePaymentMethod)
-                }
-            }
-            
-            self.delegate.updatePaymentMethods(paymentMethods)
+        let onError = { (error: Error) -> Void in
+            self.delegate.informError(error)
         }
+
+        let onSucces = { (models: [PaymentMethod]?) -> Void in
+            //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
+            self.delegate.updatePaymentMethods(models)
+        }
+
+        let paymentMethodModelCreator = ModelCreator<PaymentMethod>(onSucces: onSucces, onError: onError)
+        
+        apiConnector.retrievePaymentMethods(withModelCreator: paymentMethodModelCreator)
+    }
+
+    
+    func retriveCardIssuers(paymentMethodId: String) {
+        
+        let onError = { (error: Error) -> Void in
+            self.delegate.informError(error)
+        }
+        
+        let onSucces = { (models: [CardIssuer]?) -> Void in
+            //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
+            self.delegate.updateCardIssuers(models)
+        }
+        
+        let cardIssuerModelCreator = ModelCreator<CardIssuer>(onSucces: onSucces, onError: onError)
+        
+        apiConnector.retriveCardIssuers(forPaymentMethodId: paymentMethodId, withModelCreator: cardIssuerModelCreator)
     }
     
+    func retriveInstallments(paymentMethodId: String, issuerId: String, amount: Double) {
+        
+        let onError = { (error: Error) -> Void in
+            self.delegate.informError(error)
+        }
+        
+        let onSucces = { (models: [Installments]?) -> Void in
+            //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
+            self.delegate.updateInstallments(models)
+        }
+        
+        let installmentsModelCreator = ModelCreator<Installments>(onSucces: onSucces, onError: onError)
+        
+        apiConnector.retriveInstallments(forPaymentMethodId: paymentMethodId, andIssuerId: issuerId, andAmount: amount, withModelCreator: installmentsModelCreator)
+        
+    }
     
 }

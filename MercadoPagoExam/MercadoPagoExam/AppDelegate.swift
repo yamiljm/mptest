@@ -10,18 +10,19 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDelegate {
-
+    
     var window: UIWindow?
+    
+    //TODO: borrar, solo para pruebas
+    var paymentService: PaymentMethodsService?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         //TODO: Borrar. Solo para testeo
-        let paymentService = PaymentMethodsService(delegate: self)
-        
-        paymentService.retrivePaymentMethods()
-        
+        paymentService = PaymentMethodsService(delegate: self)
+    
         return true
     }
 
@@ -41,6 +42,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDele
 
     func applicationDidBecomeActive(_ application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    
+        //TODO: borrar. Solo para probar servicios.
+        paymentService?.retriveInstallments(paymentMethodId: "visa", issuerId: "288", amount: 1777.243)
+        //        paymentService?.retrivePaymentMethods()
+        //        paymentService?.retriveCardIssuers(paymentMethodId: "visa")
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -51,6 +57,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDele
     func updatePaymentMethods(_ paymentMethods: [PaymentMethod]?){
         paymentMethods?.forEach({ (payment: PaymentMethod) in
             print("Name: \(String(describing: payment.name))\n")
+        })
+    }
+    
+    func updateInstallments(_ installments: [Installments]?) {
+        
+        installments?.forEach({ (installment: Installments) in
+            print("Cuotas recomendadas \(String(describing: installment.payerCosts?[0].recommendedMessage))")
+        })
+        
+        
+    }
+    
+    func updateCardIssuers(_ cardIssuers: [CardIssuer]?) {
+        cardIssuers?.forEach({ (issuer: CardIssuer) in
+            
+            print("Issuers: \(issuer.name)")
         })
     }
     

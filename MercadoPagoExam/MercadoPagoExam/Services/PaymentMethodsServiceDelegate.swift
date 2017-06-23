@@ -13,6 +13,10 @@ protocol PaymentMethodsServiceDelegate {
     
     func updatePaymentMethods(_ paymentMethods: [PaymentMethod]?)
     
+    func updateCardIssuers(_ cardIssuers: [CardIssuer]?)
+    
+    func updateInstallments(_ installments: [Installments]?)
+    
     func informError(_ error: Error)
     
 }

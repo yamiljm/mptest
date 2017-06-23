@@ -17,14 +17,13 @@
 		C62CF7481EFC75E900091503 /* CardIssuer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7471EFC75E900091503 /* CardIssuer.swift */; };
 		C62CF74A1EFC79D100091503 /* Installments.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7491EFC79D100091503 /* Installments.swift */; };
 		C62CF74C1EFC7B2400091503 /* PayerCosts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF74B1EFC7B2400091503 /* PayerCosts.swift */; };
-		C63C8BFD1EF6D519000A76D5 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8BFC1EF6D519000A76D5 /* APIConnector.swift */; };
-		C63C8BFE1EF6D519000A76D5 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8BFC1EF6D519000A76D5 /* APIConnector.swift */; };
-		C63C8C001EF6D542000A76D5 /* MercadoPagoAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8BFF1EF6D542000A76D5 /* MercadoPagoAPIConnector.swift */; };
-		C63C8C011EF6D542000A76D5 /* MercadoPagoAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8BFF1EF6D542000A76D5 /* MercadoPagoAPIConnector.swift */; };
+		C62CF7511EFC84CE00091503 /* APIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF74E1EFC84CE00091503 /* APIConnector.swift */; };
+		C62CF7521EFC84CE00091503 /* MercadoPagoAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF74F1EFC84CE00091503 /* MercadoPagoAPIConnector.swift */; };
+		C62CF7531EFC84CE00091503 /* PaymentMethodsAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7501EFC84CE00091503 /* PaymentMethodsAPIConnector.swift */; };
+		C62CF7551EFC908D00091503 /* ModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7541EFC908D00091503 /* ModelCreator.swift */; };
+		C62CF7571EFCB32300091503 /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7561EFCB32200091503 /* Double+Formatter.swift */; };
 		C63C8C041EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */; };
 		C63C8C051EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */; };
-		C63C8C071EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C061EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift */; };
-		C63C8C081EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C061EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift */; };
 		C63C8C0A1EF8076C000A76D5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C091EF8076C000A76D5 /* Endpoint.swift */; };
 		C63C8C0B1EF8076C000A76D5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C091EF8076C000A76D5 /* Endpoint.swift */; };
 		C63C8C121EF8321F000A76D5 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C111EF8321F000A76D5 /* Environment.swift */; };
@@ -69,10 +68,12 @@
 		C62CF7471EFC75E900091503 /* CardIssuer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardIssuer.swift; sourceTree = "<group>"; };
 		C62CF7491EFC79D100091503 /* Installments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Installments.swift; sourceTree = "<group>"; };
 		C62CF74B1EFC7B2400091503 /* PayerCosts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayerCosts.swift; sourceTree = "<group>"; };
-		C63C8BFC1EF6D519000A76D5 /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
-		C63C8BFF1EF6D542000A76D5 /* MercadoPagoAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MercadoPagoAPIConnector.swift; sourceTree = "<group>"; };
+		C62CF74E1EFC84CE00091503 /* APIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConnector.swift; sourceTree = "<group>"; };
+		C62CF74F1EFC84CE00091503 /* MercadoPagoAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MercadoPagoAPIConnector.swift; sourceTree = "<group>"; };
+		C62CF7501EFC84CE00091503 /* PaymentMethodsAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsAPIConnector.swift; sourceTree = "<group>"; };
+		C62CF7541EFC908D00091503 /* ModelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelCreator.swift; sourceTree = "<group>"; };
+		C62CF7561EFCB32200091503 /* Double+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
 		C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsService.swift; sourceTree = "<group>"; };
-		C63C8C061EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsAPIConnector.swift; sourceTree = "<group>"; };
 		C63C8C091EF8076C000A76D5 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		C63C8C111EF8321F000A76D5 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		C63C8C141EF85700000A76D5 /* Environmentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environmentable.swift; sourceTree = "<group>"; };
@@ -130,8 +131,19 @@
 			isa = PBXGroup;
 			children = (
 				C62CF73D1EF99ABB00091503 /* URLRequest+HTTPMethods.swift */,
+				C62CF7561EFCB32200091503 /* Double+Formatter.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C62CF74D1EFC84CE00091503 /* Connectors */ = {
+			isa = PBXGroup;
+			children = (
+				C62CF74E1EFC84CE00091503 /* APIConnector.swift */,
+				C62CF74F1EFC84CE00091503 /* MercadoPagoAPIConnector.swift */,
+				C62CF7501EFC84CE00091503 /* PaymentMethodsAPIConnector.swift */,
+			);
+			path = Connectors;
 			sourceTree = "<group>";
 		};
 		C63C8BFA1EF6D4EA000A76D5 /* Models */ = {
@@ -150,9 +162,7 @@
 		C63C8BFB1EF6D4EA000A76D5 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				C63C8BFC1EF6D519000A76D5 /* APIConnector.swift */,
-				C63C8BFF1EF6D542000A76D5 /* MercadoPagoAPIConnector.swift */,
-				C63C8C061EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift */,
+				C62CF74D1EFC84CE00091503 /* Connectors */,
 				C63C8C091EF8076C000A76D5 /* Endpoint.swift */,
 				C63C8C171EF86B2C000A76D5 /* NetworkExecutor.swift */,
 				C63C8C191EF86EED000A76D5 /* URLSessionNetworkExecutor.swift */,
@@ -165,6 +175,7 @@
 			children = (
 				C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */,
 				C62CF73F1EF9C8B700091503 /* PaymentMethodsServiceDelegate.swift */,
+				C62CF7541EFC908D00091503 /* ModelCreator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -459,25 +470,27 @@
 				C62CF7401EF9C8B700091503 /* PaymentMethodsServiceDelegate.swift in Sources */,
 				C63C8C0A1EF8076C000A76D5 /* Endpoint.swift in Sources */,
 				C63C8C041EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */,
+				C62CF7511EFC84CE00091503 /* APIConnector.swift in Sources */,
 				C62CF7481EFC75E900091503 /* CardIssuer.swift in Sources */,
 				C63C8C251EF8926E000A76D5 /* Logger.swift in Sources */,
 				C63C8C181EF86B2C000A76D5 /* NetworkExecutor.swift in Sources */,
-				C63C8BFD1EF6D519000A76D5 /* APIConnector.swift in Sources */,
 				C62CF73E1EF99ABB00091503 /* URLRequest+HTTPMethods.swift in Sources */,
 				C65D4D611EF8BB5C0097A119 /* MercadoPagoError.swift in Sources */,
 				C63C8C121EF8321F000A76D5 /* Environment.swift in Sources */,
 				C62CF7441EFB260000091503 /* PaymentMethodSettings.swift in Sources */,
-				C63C8C001EF6D542000A76D5 /* MercadoPagoAPIConnector.swift in Sources */,
 				C63C8C231EF8925A000A76D5 /* ConsoleLogger.swift in Sources */,
 				C62CF74A1EFC79D100091503 /* Installments.swift in Sources */,
 				C62CF74C1EFC7B2400091503 /* PayerCosts.swift in Sources */,
+				C62CF7531EFC84CE00091503 /* PaymentMethodsAPIConnector.swift in Sources */,
 				C63C8C1A1EF86EED000A76D5 /* URLSessionNetworkExecutor.swift in Sources */,
+				C62CF7521EFC84CE00091503 /* MercadoPagoAPIConnector.swift in Sources */,
+				C62CF7571EFCB32300091503 /* Double+Formatter.swift in Sources */,
 				C67C20801EF60D6900C85958 /* ViewController.swift in Sources */,
 				C63C8C1E1EF88B77000A76D5 /* LoggerType.swift in Sources */,
 				C63C8C151EF85700000A76D5 /* Environmentable.swift in Sources */,
 				C62CF7421EF9C8F500091503 /* PaymentMethod.swift in Sources */,
 				C62CF7461EFC68FC00091503 /* PaymentMethodKeys.swift in Sources */,
-				C63C8C071EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift in Sources */,
+				C62CF7551EFC908D00091503 /* ModelCreator.swift in Sources */,
 				C67C207E1EF60D6900C85958 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,14 +499,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C63C8BFE1EF6D519000A76D5 /* APIConnector.swift in Sources */,
 				C63C8C161EF85700000A76D5 /* Environmentable.swift in Sources */,
 				C63C8C131EF8321F000A76D5 /* Environment.swift in Sources */,
-				C63C8C081EF806A9000A76D5 /* PaymentMethodsAPIConnector.swift in Sources */,
 				C63C8C051EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */,
 				C67C20931EF60D6900C85958 /* MercadoPagoExamTests.swift in Sources */,
 				C63C8C0B1EF8076C000A76D5 /* Endpoint.swift in Sources */,
-				C63C8C011EF6D542000A76D5 /* MercadoPagoAPIConnector.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

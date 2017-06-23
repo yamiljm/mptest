@@ -18,7 +18,7 @@ protocol APIConnector {
     
     func createBaseURL() -> URL?
     
-    func queryParameters() -> [URLQueryItem]
+    func commonQueryParameters() -> [URLQueryItem]
 
 }
 

@@ -33,7 +33,7 @@ class MercadoPagoAPIConnector : APIConnector, Environmentable {
         return [:]
     }
     
-    func queryParameters() -> [URLQueryItem] {
+    func commonQueryParameters() -> [URLQueryItem] {
         let publiKeyQueryItem = URLQueryItem(name: Params.publicKey, value: publicKeyValue)
         return [publiKeyQueryItem]
     }

@@ -23,7 +23,7 @@ struct CardIssuer: Decodable {
     let id: String
     let name: String
     let secureThumbnail: String?
-    let thumbnail: String?
+//    let thumbnail: String?
     let proccesingMode: String?
     let merchantAccountId: String?
     
@@ -38,7 +38,7 @@ struct CardIssuer: Decodable {
         self.name = name
         
         self.secureThumbnail = Keys.secureThumbnail <~~ json
-        self.thumbnail = Keys.thumbnail <~~ json
+//        self.thumbnail = Keys.thumbnail <~~ json
         self.proccesingMode = Keys.processingMode <~~ json
         self.merchantAccountId = Keys.merchantAccountId <~~ json
     }
