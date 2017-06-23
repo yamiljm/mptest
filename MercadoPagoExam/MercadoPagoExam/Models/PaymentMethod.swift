@@ -9,11 +9,27 @@
 import Foundation
 import Gloss
 
+enum PaymentType: String {
+    case creditCard = "credit_card"
+    case debitCard = "debit_card"
+    case ticket = "ticket"
+    case other = "other"
+    
+    init(rawValue: String) {
+        switch rawValue {
+        case "credit_card": self = .creditCard
+        case "debit_card": self = .debitCard
+        case "ticket": self = .ticket
+        default: self = .other
+        }
+    }
+}
+
 struct PaymentMethod: Decodable {
     
     let id: String
     let name: String
-    let paymentTypeId: String?
+    let paymentTypeId: PaymentType
     let status: String?
     let secureThumbnail: String?
     let thumbnail: String?
@@ -27,18 +43,17 @@ struct PaymentMethod: Decodable {
     init?(json: JSON) {
         
         //Con fines de este ejercicio solo hago requeridos los siguientes campos
-        //Asumo que si el campo status no es "active" el payment method no se muestra
         
-        guard let id = PaymentMethodKeys.id <~~ json as String?, let name = PaymentMethodKeys.name <~~ json as String?, let status = PaymentMethodKeys.status <~~ json as String? else {
+        guard let id = PaymentMethodKeys.id <~~ json as String?, let name = PaymentMethodKeys.name <~~ json as String?, let rawPaymentTypeId = PaymentMethodKeys.paymentTypeId <~~ json as String? else {
             //TODO: Loguear que no se cargó un payment method
             return nil
         }
         
         self.id = id
         self.name = name
-        self.status = status
+        self.paymentTypeId = PaymentType(rawValue: rawPaymentTypeId)
         
-        self.paymentTypeId = PaymentMethodKeys.paymentTypeId <~~ json
+        self.status = PaymentMethodKeys.status <~~ json
         self.thumbnail = PaymentMethodKeys.thumbnail <~~ json
         self.secureThumbnail = PaymentMethodKeys.secureThumbnail <~~ json
         self.deferredCapture = PaymentMethodKeys.deferredCapture <~~ json

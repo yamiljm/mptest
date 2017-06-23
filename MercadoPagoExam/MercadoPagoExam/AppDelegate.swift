@@ -44,8 +44,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDele
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     
         //TODO: borrar. Solo para probar servicios.
-        paymentService?.retriveInstallments(paymentMethodId: "visa", issuerId: "288", amount: 1777.243)
-        //        paymentService?.retrivePaymentMethods()
+//        paymentService?.retriveInstallments(paymentMethodId: "visa", issuerId: "288", amount: 1777.243)
+                paymentService?.retrivePaymentMethods(ofType: .creditCard)
         //        paymentService?.retriveCardIssuers(paymentMethodId: "visa")
     }
 
@@ -56,7 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDele
 //TODO: borrar. solo para testeo
     func updatePaymentMethods(_ paymentMethods: [PaymentMethod]?){
         paymentMethods?.forEach({ (payment: PaymentMethod) in
-            print("Name: \(String(describing: payment.name))\n")
+            print("Name: \(String(describing: payment.name)) - Type: \(String(describing: payment.paymentTypeId.rawValue))\n")
         })
     }
     

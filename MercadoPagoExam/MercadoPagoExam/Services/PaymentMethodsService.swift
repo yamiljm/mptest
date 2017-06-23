@@ -18,7 +18,7 @@ final class PaymentMethodsService {
         self.delegate = delegate
     }
 
-    func retrivePaymentMethods() {
+    func retrivePaymentMethods(ofType type: PaymentType?=nil) {
         
         let onError = { (error: Error) -> Void in
             self.delegate.informError(error)
@@ -26,7 +26,12 @@ final class PaymentMethodsService {
 
         let onSucces = { (models: [PaymentMethod]?) -> Void in
             //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
-            self.delegate.updatePaymentMethods(models)
+            if let type = type {
+                let filteredPaymentMethods = models?.filter {$0.paymentTypeId == type}
+                self.delegate.updatePaymentMethods(filteredPaymentMethods)
+            } else {
+                self.delegate.updatePaymentMethods(models)
+            }
         }
 
         let paymentMethodModelCreator = ModelCreator<PaymentMethod>(onSucces: onSucces, onError: onError)
