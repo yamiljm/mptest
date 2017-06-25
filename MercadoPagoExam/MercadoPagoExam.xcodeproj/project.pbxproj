@@ -22,6 +22,8 @@
 		C62CF7531EFC84CE00091503 /* PaymentMethodsAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7501EFC84CE00091503 /* PaymentMethodsAPIConnector.swift */; };
 		C62CF7551EFC908D00091503 /* ModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7541EFC908D00091503 /* ModelCreator.swift */; };
 		C62CF7571EFCB32300091503 /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7561EFCB32200091503 /* Double+Formatter.swift */; };
+		C63899ED1EFDD2800021645C /* PaymentMethodAmountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63899EC1EFDD2800021645C /* PaymentMethodAmountViewController.swift */; };
+		C63899F51EFE28160021645C /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63899F41EFE28160021645C /* AppConfiguration.swift */; };
 		C63C8C041EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */; };
 		C63C8C051EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */; };
 		C63C8C0A1EF8076C000A76D5 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C091EF8076C000A76D5 /* Endpoint.swift */; };
@@ -73,6 +75,12 @@
 		C62CF7501EFC84CE00091503 /* PaymentMethodsAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsAPIConnector.swift; sourceTree = "<group>"; };
 		C62CF7541EFC908D00091503 /* ModelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelCreator.swift; sourceTree = "<group>"; };
 		C62CF7561EFCB32200091503 /* Double+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
+		C63899EC1EFDD2800021645C /* PaymentMethodAmountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodAmountViewController.swift; sourceTree = "<group>"; };
+		C63899F01EFDD5750021645C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
+		C63899F11EFDD5750021645C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C63899F21EFDD8590021645C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		C63899F31EFDD8590021645C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C63899F41EFE28160021645C /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsService.swift; sourceTree = "<group>"; };
 		C63C8C091EF8076C000A76D5 /* Endpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		C63C8C111EF8321F000A76D5 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
@@ -149,6 +157,7 @@
 		C63663DD1EFDC89F001A2D7D /* Flows */ = {
 			isa = PBXGroup;
 			children = (
+				C63899EC1EFDD2800021645C /* PaymentMethodAmountViewController.swift */,
 			);
 			path = Flows;
 			sourceTree = "<group>";
@@ -195,6 +204,7 @@
 				C63C8C0D1EF80B2E000A76D5 /* Protocols */,
 				C63C8C111EF8321F000A76D5 /* Environment.swift */,
 				C63C8C1B1EF88144000A76D5 /* MercadoPagoError.swift */,
+				C63899F41EFE28160021645C /* AppConfiguration.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -343,7 +353,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = C67C20711EF60D6800C85958;
@@ -484,6 +493,7 @@
 				C63C8C181EF86B2C000A76D5 /* NetworkExecutor.swift in Sources */,
 				C62CF73E1EF99ABB00091503 /* URLRequest+HTTPMethods.swift in Sources */,
 				C65D4D611EF8BB5C0097A119 /* MercadoPagoError.swift in Sources */,
+				C63899F51EFE28160021645C /* AppConfiguration.swift in Sources */,
 				C63C8C121EF8321F000A76D5 /* Environment.swift in Sources */,
 				C62CF7441EFB260000091503 /* PaymentMethodSettings.swift in Sources */,
 				C63C8C231EF8925A000A76D5 /* ConsoleLogger.swift in Sources */,
@@ -499,6 +509,7 @@
 				C62CF7421EF9C8F500091503 /* PaymentMethod.swift in Sources */,
 				C62CF7461EFC68FC00091503 /* PaymentMethodKeys.swift in Sources */,
 				C62CF7551EFC908D00091503 /* ModelCreator.swift in Sources */,
+				C63899ED1EFDD2800021645C /* PaymentMethodAmountViewController.swift in Sources */,
 				C67C207E1EF60D6900C85958 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -530,6 +541,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C67C20821EF60D6900C85958 /* Base */,
+				C63899F01EFDD5750021645C /* es */,
+				C63899F21EFDD8590021645C /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -538,6 +551,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				C67C20871EF60D6900C85958 /* Base */,
+				C63899F11EFDD5750021645C /* es */,
+				C63899F31EFDD8590021645C /* en */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -549,6 +564,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -600,6 +616,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

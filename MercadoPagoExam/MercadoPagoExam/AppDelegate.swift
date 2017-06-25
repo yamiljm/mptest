@@ -22,6 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDele
         
         //TODO: Borrar. Solo para testeo
         paymentService = PaymentMethodsService(delegate: self)
+        
+        //TODO: pasar esto a algun configurador
+        UserDefaults.standard.set(AppConfiguration.shared.language, forKey: "AppleLanguages")
     
         return true
     }
