@@ -20,7 +20,7 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
         amountField.delegate = self
         amountField.becomeFirstResponder()
         formatter = createFormatter()
-        
+        amountField.text = formatter?.string(from: 0)
         
         // Do any additional setup after loading the view.
     }
@@ -45,12 +45,20 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        if string.isDecimalSeparator() || string.isEmpty {
-            return true
+        //Evito borrar signo de la moneda
+        if string.isEmpty && textField.text == formatter?.currencySymbol {
+            textField.text = formatter?.currencySymbol ?? "" + " "
+            return false
         }
         
-        guard let currentText = textField.text, string.isNumeric() else {
+        //valido entradas
+        guard let currentText = textField.text, string.isNumeric() || string.isDecimalSeparator() || string.isEmpty else {
             return false
+        }
+        
+        //Se admite solo una separador decimal y/o backspace
+        if (string.isDecimalSeparator() && !currentText.containsDecimalSeparator()) || string.isEmpty {
+            return true
         }
         
         let textWithoutGroupingSeparator = currentText.replacingOccurrences(of: (formatter?.groupingSeparator)!, with: "")
@@ -74,8 +82,9 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
         let formatter = NumberFormatter()
         formatter.locale = AppConfiguration.shared.locale()
         formatter.minimum = 0
-        formatter.numberStyle = .decimal
+        formatter.numberStyle = .currency
         formatter.maximumFractionDigits = 9
+        formatter.minimumFractionDigits = 0
         return formatter
     }
 

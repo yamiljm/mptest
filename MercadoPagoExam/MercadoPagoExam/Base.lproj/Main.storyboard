@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,37 +22,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ingrese un monto" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byo-tV-GJL">
-                                <rect key="frame" x="56" y="136" width="135" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese un monto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byo-tV-GJL">
+                                <rect key="frame" x="16" y="72" width="149" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2w-aX-Yhr">
-                                <rect key="frame" x="56" y="165" width="253" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEY-bh-VRy">
-                                <rect key="frame" x="0.0" y="619" width="375" height="48"/>
+                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.61960784310000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="9YM-LG-z5J"/>
+                                    <constraint firstAttribute="height" constant="64" id="9YM-LG-z5J"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Continuar"/>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2w-aX-Yhr">
+                                <rect key="frame" x="61" y="117" width="253" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="Vpu-Iy-tXa"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="byo-tV-GJL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="FKX-Kh-hM4"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VEY-bh-VRy" secondAttribute="bottom" id="KPY-mi-6Q3"/>
+                            <constraint firstItem="i2w-aX-Yhr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KYH-MW-brG"/>
                             <constraint firstAttribute="trailing" secondItem="VEY-bh-VRy" secondAttribute="trailing" id="T0K-jd-U4I"/>
+                            <constraint firstItem="i2w-aX-Yhr" firstAttribute="top" secondItem="byo-tV-GJL" secondAttribute="bottom" constant="22" id="VHE-j3-INg"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="byo-tV-GJL" secondAttribute="leading" id="b7a-GK-o9P"/>
                             <constraint firstItem="VEY-bh-VRy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jYk-I7-9gq"/>
+                            <constraint firstItem="i2w-aX-Yhr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="rIP-6j-aDp"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bP4-75-MPc" appends="YES" id="v7I-U5-s52"/>
