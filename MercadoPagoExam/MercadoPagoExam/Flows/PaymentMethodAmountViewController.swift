@@ -11,7 +11,11 @@ import UIKit
 class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var amountField: UITextField!
+    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var errorLabel: UILabel!
+    
     private var formatter: NumberFormatter?
+    private let minimumAmount = NSNumber(value: 0)
     
     
     override func viewDidLoad() {
@@ -22,7 +26,14 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
         formatter = createFormatter()
         amountField.text = formatter?.string(from: 0)
         
-        // Do any additional setup after loading the view.
+        errorLabel.isHidden = true
+        errorLabel.text = "El monto debe ser mayo a cero" //TODO: Internacionalizar
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardNotification(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,8 +42,9 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
     }
     
 
-    /*
     // MARK: - Navigation
+    
+    /*
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -41,10 +53,30 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
     }
     */
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        let validAmount = isValidAmount()
+        
+        if !validAmount {
+            errorLabel.isHidden = false
+        }
+        
+        return validAmount
+    }
+    
+    private func isValidAmount() -> Bool {
+        
+        guard let amount = formatter?.number(from: amountField.text ?? "0") else {
+            return false
+        }
+        return amount.compare(minimumAmount) == .orderedDescending
+    }
+    
     //MARK: - UITextFieldDelegate
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        errorLabel.isHidden = true
         //Evito borrar signo de la moneda
         if string.isEmpty && textField.text == formatter?.currencySymbol {
             textField.text = formatter?.currencySymbol ?? "" + " "
@@ -91,6 +123,27 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func resignFirstResponder(_ sender: UITapGestureRecognizer) {
         amountField.resignFirstResponder()
+    }
+    
+    
+    func keyboardNotification(notification: NSNotification) {
+        if let userInfo = notification.userInfo {
+            let endFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue
+            let duration:TimeInterval = (userInfo[UIKeyboardAnimationDurationUserInfoKey] as? NSNumber)?.doubleValue ?? 0
+            let animationCurveRawNSN = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? NSNumber
+            let animationCurveRaw = animationCurveRawNSN?.uintValue ?? UIViewAnimationOptions.curveEaseInOut.rawValue
+            let animationCurve:UIViewAnimationOptions = UIViewAnimationOptions(rawValue: animationCurveRaw)
+            if (endFrame?.origin.y)! >= UIScreen.main.bounds.size.height {
+                self.keyboardHeightLayoutConstraint?.constant = 0.0
+            } else {
+                self.keyboardHeightLayoutConstraint?.constant = endFrame?.size.height ?? 0.0
+            }
+            UIView.animate(withDuration: duration,
+                           delay: TimeInterval(0),
+                           options: animationCurve,
+                           animations: { self.view.layoutIfNeeded() },
+                           completion: nil)
+        }
     }
 }
 
