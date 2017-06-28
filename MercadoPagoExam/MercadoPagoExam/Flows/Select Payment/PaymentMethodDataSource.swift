@@ -18,8 +18,6 @@ class PaymentMethodDataSource: NSObject, UITableViewDelegate, PaymentMethodCompo
 
     var service: PaymentMethodsService?
     
-//    weak var tableView: UITableView?
-    
     var dataLoaded: ((Error?) -> Void)?
     
     override init() {
