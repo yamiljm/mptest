@@ -9,7 +9,7 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, PaymentMethodsServiceDele
         // Override point for customization after application launch.
         
         //TODO: Borrar. Solo para testeo
-        paymentService = PaymentMethodsService(delegate: self)
+//        paymentService = PaymentMethodsService(delegate: self)
         
         //TODO: pasar esto a algun configurador
         UserDefaults.standard.set(AppConfiguration.shared.language, forKey: "AppleLanguages")

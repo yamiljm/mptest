@@ -8,23 +8,27 @@
 
 import UIKit
 
-class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
+class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, PaymentStepable {
 
     @IBOutlet weak var amountField: UITextField!
-    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var continueButton: UIButton!
     private var formatter: NumberFormatter?
     private let minimumAmount = NSNumber(value: 0)
+    
+    var selectedPayment: SelectedPayment? = SelectedPayment()
+    var currentStep: PaymentStep? = PaymentStepFactory.create(.amount)
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         amountField.delegate = self
-        amountField.becomeFirstResponder()
+        amountField.inputAccessoryView = continueButton.inputView
+        
         formatter = createFormatter()
-        amountField.text = formatter?.string(from: 0)
         
         errorLabel.isHidden = true
         errorLabel.text = "El monto debe ser mayo a cero" //TODO: Internacionalizar
@@ -41,17 +45,34 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if selectedPayment?.amount == nil {
+            amountField.text = formatter?.string(from: 0)
+            amountField.becomeFirstResponder()
+        } else {
+            //TODO: revisar
+            amountField.resignFirstResponder()
+        
+        }
+    }
     // MARK: - Navigation
     
-    /*
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let amount = amountField.text {
+            selectedPayment?.amount = formatter?.number(from: amount)
+        }
+        
+        if segue.destination.isKind(of: PaymentComponentTableViewController.self) {
+            let destination = segue.destination as? PaymentComponentTableViewController
+            if let nextStep = PaymentStepOrderManager.stepAfter(step: currentStep) {
+                destination?.currentStep = nextStep
+            }
+        }
     }
-    */
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         

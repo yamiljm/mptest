@@ -81,8 +81,9 @@
                     <navigationItem key="navigationItem" id="Dxs-sE-gM5"/>
                     <connections>
                         <outlet property="amountField" destination="i2w-aX-Yhr" id="23N-T5-bxD"/>
+                        <outlet property="continueButton" destination="VEY-bh-VRy" id="dXo-Sp-Qhk"/>
                         <outlet property="errorLabel" destination="0Nb-Mf-6Xb" id="MXk-sn-xyl"/>
-                        <outlet property="keyboardHeightLayoutConstraint" destination="KPY-mi-6Q3" id="UTl-fW-Us4"/>
+                        <outlet property="keyboardHeightLayoutConstraint" destination="KPY-mi-6Q3" id="4LN-cz-Bgl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -94,22 +95,39 @@
             </objects>
             <point key="canvasLocation" x="1076" y="111.99400299850076"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Payment Component Table View Controller-->
         <scene sceneID="q0E-wP-zlM">
             <objects>
-                <tableViewController id="TF7-D2-2St" sceneMemberID="viewController">
+                <tableViewController id="TF7-D2-2St" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Abs-e2-il6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" id="tJz-Km-TSD">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="paymentComponentWithImageCell" id="tJz-Km-TSD" customClass="PaymentComponentWithImageCell" customModule="MercadoPagoExam">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tJz-Km-TSD" id="Xte-73-bUB">
                                     <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTY-Sh-94t" userLabel="Card Image">
+                                            <rect key="frame" x="8" y="0.0" width="55" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-we-HqE" userLabel="Title">
+                                            <rect key="frame" x="84" y="11" width="244" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="cardImage" destination="aTY-Sh-94t" id="Ne9-fk-wnA"/>
+                                    <outlet property="title" destination="Twt-we-HqE" id="ffD-Dn-WJD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -120,7 +138,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGF-7x-Ash" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1983" y="112"/>
+            <point key="canvasLocation" x="1981.5999999999999" y="111.99400299850076"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ge2-pE-EEz">
