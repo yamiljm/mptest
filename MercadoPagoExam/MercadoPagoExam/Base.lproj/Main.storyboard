@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -111,18 +112,27 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CreditCardPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="aTY-Sh-94t" userLabel="Card Image">
-                                            <rect key="frame" x="8" y="0.0" width="55" height="36"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CreditCardPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="aTY-Sh-94t" userLabel="Card Image">
+                                            <rect key="frame" x="20" y="11" width="40" height="22"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="aTY-Sh-94t" secondAttribute="height" multiplier="51:28" id="8Bo-CK-iR4"/>
+                                                <constraint firstAttribute="width" constant="40" id="VJq-3P-07N"/>
+                                            </constraints>
+                                            <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-we-HqE" userLabel="Title">
-                                            <rect key="frame" x="84" y="11" width="244" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-we-HqE" userLabel="Title">
+                                            <rect key="frame" x="68" y="11" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Twt-we-HqE" firstAttribute="centerY" secondItem="Xte-73-bUB" secondAttribute="centerY" id="4Wr-oj-lhh"/>
+                                        <constraint firstItem="aTY-Sh-94t" firstAttribute="centerY" secondItem="Xte-73-bUB" secondAttribute="centerY" id="SHv-Jg-C6j"/>
+                                        <constraint firstItem="Twt-we-HqE" firstAttribute="leading" secondItem="aTY-Sh-94t" secondAttribute="trailing" constant="8" id="bDg-0z-kee"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="aTY-Sh-94t" secondAttribute="leading" constant="-12" id="sfl-6O-xrQ"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="cardImage" destination="aTY-Sh-94t" id="Ne9-fk-wnA"/>

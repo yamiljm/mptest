@@ -8,75 +8,124 @@
 
 /* Begin PBXBuildFile section */
 		010756FAA2B1685D81E7CDB2CF986AED /* Pods-MercadoPagoExamTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 92C412379983AB51620C6A061EF0B302 /* Pods-MercadoPagoExamTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		08DD2EE862771D81F72AEED3830037F5 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8287396C95E9F77B532453E48F8DC9 /* Cache.swift */; };
+		09A777C1F0DBD656CC239282B05C2AC3 /* DataDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05BCE62170B0004132E241FFD274BC3 /* DataDecoder.swift */; };
 		1F2175802E88C043BAB31E24E418D348 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		3D41B6328849C0DD148552938B98DB42 /* Pods-MercadoPagoExam-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF029A346FDF90020BB3B72BFCC9C8F /* Pods-MercadoPagoExam-dummy.m */; };
-		4C8FE8D195D82C86A7964A53A5455BB0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		30F77B29DA04BD9CC5BE9C01580C8575 /* Scheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 119657948D7CAC7C37BFF57688C4F121 /* Scheduler.swift */; };
+		407A0926539AA3F046587605107453C4 /* Deduplicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE409BF628A86F92CB24EC56AD28E1EB /* Deduplicator.swift */; };
+		47F1A7026CBFDA6BFDAB05106C3E0BD7 /* Pods-MercadoPagoExam-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = EDF029A346FDF90020BB3B72BFCC9C8F /* Pods-MercadoPagoExam-dummy.m */; };
+		483BA0DD9C507911686CF3F181B4F605 /* Preheater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167DD90FE20B4E9C4DB5921A9DFFCB4B /* Preheater.swift */; };
 		509B9FE724C7E9DEEF825C72C508353A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		60EF2B4A841620E7F6E237712878CAE1 /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFEBE88DA47DB8CF7D74A3C46F5F9861 /* Gloss.swift */; };
-		9224A0C711AE2717A356DF63B201C2AF /* Pods-MercadoPagoExam-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 310374BF76D74AD4BA11D125AE26D16C /* Pods-MercadoPagoExam-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA3DD0BBA10012C102290B35C704D3CB /* Gloss-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88157DEC78A26DBF9861C98519004CE5 /* Gloss-dummy.m */; };
-		D3B1766D93EFC0E7736AE2CFD49D24C4 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10DE9CC482224224CF94FE4FB4624B9 /* Encoder.swift */; };
+		5ADBFB7B8E16FF5DC7CD8835FBCD7144 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = F89AA90CDA0901E7CA5967986699A87C /* Request.swift */; };
+		60EF2B4A841620E7F6E237712878CAE1 /* Gloss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29C68054C1D857C43CF230DC5F0D624E /* Gloss.swift */; };
+		6667A6E82B4AD4DEEAF9702FC61BD489 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DFACE618B422E9977092FBDEB743113 /* Processor.swift */; };
+		6C4FF19CCA355061FE5BB62159D85672 /* DataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F07CDAD685BF40E0A7CF6C7E13443A /* DataLoader.swift */; };
+		7E8F914D4CA9F638231996CCACC953C4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		81398D284C811060FCE52E52F778C88B /* Nuke-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2AF3F0E873E66CBA21D4B86A301C787A /* Nuke-dummy.m */; };
+		8341727D7362AF57EED4B4722C4AE266 /* Loader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5E5170F1CD846C9D84E3847E9B8A982 /* Loader.swift */; };
+		9DB93BA64A25F292A99F91F1AE2174FC /* Nuke.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C149AE6686BAD40678650E6A642400 /* Nuke.swift */; };
+		ABBBEB8DA4A10F31CB18F6B3FA82DF98 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		C6DFA4FDE4DD5BEC8B2E16B488FEA51B /* CancellationToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF75961F4EB006E34C5A904E36DFE216 /* CancellationToken.swift */; };
+		CA3DD0BBA10012C102290B35C704D3CB /* Gloss-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4169639D65682A988C8D8FFDE22D6B9D /* Gloss-dummy.m */; };
+		D3B1766D93EFC0E7736AE2CFD49D24C4 /* Encoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1A41ACFF6530E5330B6237AE297609 /* Encoder.swift */; };
+		E0AE2A5B99F35919D818886F59F9A26A /* Pods-MercadoPagoExam-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 310374BF76D74AD4BA11D125AE26D16C /* Pods-MercadoPagoExam-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E142A6CECED727A826BC9C8559B787EA /* Pods-MercadoPagoExamTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 52DD9F164D97F2FD05E18BB4B1C91208 /* Pods-MercadoPagoExamTests-dummy.m */; };
-		EE33386073ACE146615C9C291C584D73 /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6868C4B106F0FEEFB5D2965D580614D /* ExtensionDictionary.swift */; };
-		F7BA99394ED391BC9CC0208DD1E94921 /* Gloss-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2A924D9619D7AF04E365BE3D2E22F415 /* Gloss-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7DD87D17D2BEFF0D9C2348D543D49F5 /* ExtensionDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 852C0024C6E82FC24CDCBACB35A8EF75 /* ExtensionDecodable.swift */; };
-		F8D81F377A1DF244782222DCB241CAEB /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D662DAB98659018824DD70A1216105 /* Decoder.swift */; };
-		FAEFA9371AA5A7F4C499C5519E279C27 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2591A067136371451F2FDE8D8F9B6DE /* ExtensionArray.swift */; };
-		FBA873D017F99AC56947CCEF31641139 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D35554B04485072F244CE2FF0345D4B /* Operators.swift */; };
+		E3F1538E71AAFE06F3FF5A1F82C7E481 /* Nuke-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B59F58368AD357EA6BB8A077A9E1E0C /* Nuke-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EE33386073ACE146615C9C291C584D73 /* ExtensionDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F859187B4DC1DB49797CF357DA92B0 /* ExtensionDictionary.swift */; };
+		F01E591A91E3EC9635177A3E2433ACC5 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD810BF34D89F8264E6AB34160384F69 /* Manager.swift */; };
+		F7BA99394ED391BC9CC0208DD1E94921 /* Gloss-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CA09BADA523934DA09406264BC5F7B68 /* Gloss-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7DD87D17D2BEFF0D9C2348D543D49F5 /* ExtensionDecodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1071514C9E85121D7E3E2E5CAC6C73B9 /* ExtensionDecodable.swift */; };
+		F8D81F377A1DF244782222DCB241CAEB /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564010C1330931B23BE1896E74D90B1D /* Decoder.swift */; };
+		FAEFA9371AA5A7F4C499C5519E279C27 /* ExtensionArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46421F68146E9D3AEDC4914952CBD18F /* ExtensionArray.swift */; };
+		FBA873D017F99AC56947CCEF31641139 /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7370A961EFD85A1B449E0D0F7A3C3D87 /* Operators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		68FB4A11322D1FF1EBCDE24340FDA5AB /* PBXContainerItemProxy */ = {
+		75AA07C3E9B2EE4C92B099A32C16328A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 40E7477AD67135868F5FB08136602674;
 			remoteInfo = Gloss;
 		};
+		98F7B58783794907D3665B7D412496EF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1FB3581F4855FB816F0C4899ED1A6026;
+			remoteInfo = Nuke;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		099CCB5B17ADB21824C4DBA050C7C865 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DB3BD01CE0D78392649C51E02B99CAF /* Gloss-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gloss-prefix.pch"; sourceTree = "<group>"; };
 		0EB39D6A53BF7D40E9B558834393054D /* Pods-MercadoPagoExamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MercadoPagoExamTests.release.xcconfig"; sourceTree = "<group>"; };
+		1071514C9E85121D7E3E2E5CAC6C73B9 /* ExtensionDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionDecodable.swift; path = Sources/ExtensionDecodable.swift; sourceTree = "<group>"; };
+		119657948D7CAC7C37BFF57688C4F121 /* Scheduler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Scheduler.swift; path = Sources/Scheduler.swift; sourceTree = "<group>"; };
 		149F2184891663CFB808E3C77B470A35 /* Pods-MercadoPagoExam-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MercadoPagoExam-frameworks.sh"; sourceTree = "<group>"; };
+		167DD90FE20B4E9C4DB5921A9DFFCB4B /* Preheater.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Preheater.swift; path = Sources/Preheater.swift; sourceTree = "<group>"; };
+		19776434E5249B9DAC522E717BA39315 /* Nuke.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Nuke.xcconfig; sourceTree = "<group>"; };
 		1A6102E4FF9568A5235DE2C8EC9EDAFA /* Pods-MercadoPagoExam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MercadoPagoExam.debug.xcconfig"; sourceTree = "<group>"; };
-		2A924D9619D7AF04E365BE3D2E22F415 /* Gloss-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gloss-umbrella.h"; sourceTree = "<group>"; };
+		29C68054C1D857C43CF230DC5F0D624E /* Gloss.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gloss.swift; path = Sources/Gloss.swift; sourceTree = "<group>"; };
+		2AF3F0E873E66CBA21D4B86A301C787A /* Nuke-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Nuke-dummy.m"; sourceTree = "<group>"; };
 		310374BF76D74AD4BA11D125AE26D16C /* Pods-MercadoPagoExam-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MercadoPagoExam-umbrella.h"; sourceTree = "<group>"; };
 		32AD8EFD05D2042112846FF84495ABE6 /* Pods-MercadoPagoExamTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MercadoPagoExamTests.modulemap"; sourceTree = "<group>"; };
 		3C69CB203F2047C9FD54B31B4F473601 /* Pods-MercadoPagoExam-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MercadoPagoExam-acknowledgements.plist"; sourceTree = "<group>"; };
-		4D35554B04485072F244CE2FF0345D4B /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
+		4169639D65682A988C8D8FFDE22D6B9D /* Gloss-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Gloss-dummy.m"; sourceTree = "<group>"; };
+		46421F68146E9D3AEDC4914952CBD18F /* ExtensionArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionArray.swift; path = Sources/ExtensionArray.swift; sourceTree = "<group>"; };
+		4C1A41ACFF6530E5330B6237AE297609 /* Encoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Encoder.swift; path = Sources/Encoder.swift; sourceTree = "<group>"; };
+		4D42EEF7E07D9B6453FD72C0546AC41D /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gloss.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		52DD9F164D97F2FD05E18BB4B1C91208 /* Pods-MercadoPagoExamTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MercadoPagoExamTests-dummy.m"; sourceTree = "<group>"; };
-		5863F3035FF00FC7163BA77F3CB20721 /* Gloss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Gloss.xcconfig; sourceTree = "<group>"; };
+		564010C1330931B23BE1896E74D90B1D /* Decoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decoder.swift; path = Sources/Decoder.swift; sourceTree = "<group>"; };
+		5B8CA1DAB3275AFBC9B1233B02A371E9 /* Pods_MercadoPagoExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MercadoPagoExam.framework; path = "Pods-MercadoPagoExam.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DFACE618B422E9977092FBDEB743113 /* Processor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Processor.swift; path = Sources/Processor.swift; sourceTree = "<group>"; };
 		5EA84EE8E062EFE9DDA01D4AC50E1CB1 /* Pods-MercadoPagoExamTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MercadoPagoExamTests-resources.sh"; sourceTree = "<group>"; };
 		6244DA6BC761274D3AC10A98EC5E194D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6335BD83DCC8EAA8123178ECC5CDF6D1 /* Gloss.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Gloss.framework; path = Gloss.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		68AFB3DC2AF2EB1D1E11403BA758491D /* Pods_MercadoPagoExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MercadoPagoExam.framework; path = "Pods-MercadoPagoExam.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C1E9163D8A1B804F7517401A3949E7F /* Pods-MercadoPagoExam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MercadoPagoExam.release.xcconfig"; sourceTree = "<group>"; };
-		76F2EB5D948B69E782128F7F8CD0A0CE /* Gloss-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gloss-prefix.pch"; sourceTree = "<group>"; };
+		7370A961EFD85A1B449E0D0F7A3C3D87 /* Operators.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Operators.swift; path = Sources/Operators.swift; sourceTree = "<group>"; };
+		78F859187B4DC1DB49797CF357DA92B0 /* ExtensionDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionDictionary.swift; path = Sources/ExtensionDictionary.swift; sourceTree = "<group>"; };
 		79FBAED7576C8073D22838DC32252F6E /* Pods-MercadoPagoExamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MercadoPagoExamTests.debug.xcconfig"; sourceTree = "<group>"; };
-		852C0024C6E82FC24CDCBACB35A8EF75 /* ExtensionDecodable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionDecodable.swift; path = Sources/ExtensionDecodable.swift; sourceTree = "<group>"; };
-		88157DEC78A26DBF9861C98519004CE5 /* Gloss-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Gloss-dummy.m"; sourceTree = "<group>"; };
-		8B0B8A6DF72DB2E28D44B711CE46FDD0 /* Gloss.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Gloss.modulemap; sourceTree = "<group>"; };
+		86C149AE6686BAD40678650E6A642400 /* Nuke.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Nuke.swift; path = Sources/Nuke.swift; sourceTree = "<group>"; };
+		8B59F58368AD357EA6BB8A077A9E1E0C /* Nuke-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-umbrella.h"; sourceTree = "<group>"; };
 		92C412379983AB51620C6A061EF0B302 /* Pods-MercadoPagoExamTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MercadoPagoExamTests-umbrella.h"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A10DE9CC482224224CF94FE4FB4624B9 /* Encoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Encoder.swift; path = Sources/Encoder.swift; sourceTree = "<group>"; };
+		955429A34F6D66A3502B3BEE14BF9223 /* Gloss.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Gloss.xcconfig; sourceTree = "<group>"; };
+		959562613212D62541DA2B386E7CB24B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2D2AFE05B6F096FC1BC082EA6B96CCA /* Pods-MercadoPagoExamTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MercadoPagoExamTests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		B2591A067136371451F2FDE8D8F9B6DE /* ExtensionArray.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionArray.swift; path = Sources/ExtensionArray.swift; sourceTree = "<group>"; };
-		B2D662DAB98659018824DD70A1216105 /* Decoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Decoder.swift; path = Sources/Decoder.swift; sourceTree = "<group>"; };
+		B56F098D1093CD4F3F81012AFA61D629 /* Nuke.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Nuke.modulemap; sourceTree = "<group>"; };
 		B8689B34E33660B36CB448F5E3C2BC7D /* Pods-MercadoPagoExamTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MercadoPagoExamTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B8F07CDAD685BF40E0A7CF6C7E13443A /* DataLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataLoader.swift; path = Sources/DataLoader.swift; sourceTree = "<group>"; };
+		BA8287396C95E9F77B532453E48F8DC9 /* Cache.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = Sources/Cache.swift; sourceTree = "<group>"; };
 		BF74178F00AE5BB43E8F877B5D3FEAE8 /* Pods-MercadoPagoExam-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MercadoPagoExam-acknowledgements.markdown"; sourceTree = "<group>"; };
+		C25536F264AB4A540BB46942EECDEA3A /* Nuke-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Nuke-prefix.pch"; sourceTree = "<group>"; };
+		CA09BADA523934DA09406264BC5F7B68 /* Gloss-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Gloss-umbrella.h"; sourceTree = "<group>"; };
 		CB86CDB3717D9306F3151FDDC9A8C5A0 /* Pods-MercadoPagoExam-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MercadoPagoExam-resources.sh"; sourceTree = "<group>"; };
-		D373BD3D6237D5E69A4EB1E22C19DAED /* Pods_MercadoPagoExamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MercadoPagoExamTests.framework; path = "Pods-MercadoPagoExamTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D6868C4B106F0FEEFB5D2965D580614D /* ExtensionDictionary.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExtensionDictionary.swift; path = Sources/ExtensionDictionary.swift; sourceTree = "<group>"; };
-		DC74EBAF3471B6DD6B1BE4A8C7EBDF7B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CD810BF34D89F8264E6AB34160384F69 /* Manager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Manager.swift; path = Sources/Manager.swift; sourceTree = "<group>"; };
+		D05BCE62170B0004132E241FFD274BC3 /* DataDecoder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataDecoder.swift; path = Sources/DataDecoder.swift; sourceTree = "<group>"; };
+		D6A376ADA09CDB8F2844F2C41532D93E /* Nuke.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Nuke.framework; path = Nuke.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC38325927F9D17D188A3A27335EEF69 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DE409BF628A86F92CB24EC56AD28E1EB /* Deduplicator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Deduplicator.swift; path = Sources/Deduplicator.swift; sourceTree = "<group>"; };
+		DF75961F4EB006E34C5A904E36DFE216 /* CancellationToken.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CancellationToken.swift; path = Sources/CancellationToken.swift; sourceTree = "<group>"; };
+		E43E537F10FE2814BC5A6CFE90042252 /* Pods_MercadoPagoExamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MercadoPagoExamTests.framework; path = "Pods-MercadoPagoExamTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5E5170F1CD846C9D84E3847E9B8A982 /* Loader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Loader.swift; path = Sources/Loader.swift; sourceTree = "<group>"; };
 		E65B5B92DAE117393CAEED341937F95B /* Pods-MercadoPagoExam.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MercadoPagoExam.modulemap"; sourceTree = "<group>"; };
 		EDF029A346FDF90020BB3B72BFCC9C8F /* Pods-MercadoPagoExam-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MercadoPagoExam-dummy.m"; sourceTree = "<group>"; };
 		F0A37E2C0704727BB95FF466C62FB495 /* Pods-MercadoPagoExamTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MercadoPagoExamTests-frameworks.sh"; sourceTree = "<group>"; };
-		FFEBE88DA47DB8CF7D74A3C46F5F9861 /* Gloss.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Gloss.swift; path = Sources/Gloss.swift; sourceTree = "<group>"; };
+		F6C926CB498F79DBC7E12A17D20F2C7D /* Gloss.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Gloss.modulemap; sourceTree = "<group>"; };
+		F89AA90CDA0901E7CA5967986699A87C /* Request.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Request.swift; path = Sources/Request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0DF7C270ECEA34B7AD8A63EF72774E49 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E8F914D4CA9F638231996CCACC953C4 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		32232D93637C5674D0BA5402EBBC3AE8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -85,19 +134,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		43EC1E68F3ECD772290C53D5A275EE48 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4C8FE8D195D82C86A7964A53A5455BB0 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		54CEDE2E0C85D6AD51F32E156A85AD11 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1F2175802E88C043BAB31E24E418D348 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EE1A3A03B52278F065F49FBF65AF0E1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ABBBEB8DA4A10F31CB18F6B3FA82DF98 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,14 +171,25 @@
 			path = "Target Support Files/Pods-MercadoPagoExam";
 			sourceTree = "<group>";
 		};
-		533010072FCD187F41B317B1E7D0BD6C /* Products */ = {
+		67053716370F962243FB12662B0C8EC9 /* Nuke */ = {
 			isa = PBXGroup;
 			children = (
-				6335BD83DCC8EAA8123178ECC5CDF6D1 /* Gloss.framework */,
-				68AFB3DC2AF2EB1D1E11403BA758491D /* Pods_MercadoPagoExam.framework */,
-				D373BD3D6237D5E69A4EB1E22C19DAED /* Pods_MercadoPagoExamTests.framework */,
+				BA8287396C95E9F77B532453E48F8DC9 /* Cache.swift */,
+				DF75961F4EB006E34C5A904E36DFE216 /* CancellationToken.swift */,
+				D05BCE62170B0004132E241FFD274BC3 /* DataDecoder.swift */,
+				B8F07CDAD685BF40E0A7CF6C7E13443A /* DataLoader.swift */,
+				DE409BF628A86F92CB24EC56AD28E1EB /* Deduplicator.swift */,
+				E5E5170F1CD846C9D84E3847E9B8A982 /* Loader.swift */,
+				CD810BF34D89F8264E6AB34160384F69 /* Manager.swift */,
+				86C149AE6686BAD40678650E6A642400 /* Nuke.swift */,
+				167DD90FE20B4E9C4DB5921A9DFFCB4B /* Preheater.swift */,
+				5DFACE618B422E9977092FBDEB743113 /* Processor.swift */,
+				F89AA90CDA0901E7CA5967986699A87C /* Request.swift */,
+				119657948D7CAC7C37BFF57688C4F121 /* Scheduler.swift */,
+				CCFA2BA003562A30D5BDAB07E684D3DF /* Support Files */,
 			);
-			name = Products;
+			name = Nuke;
+			path = Nuke;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -137,8 +197,8 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				D02F45D563905A95EA4E3CD6AF0F6C9D /* Pods */,
-				533010072FCD187F41B317B1E7D0BD6C /* Products */,
+				F903ACE696BF6E462377785AED80A85F /* Pods */,
+				C779D298E6B4D117B33322F9B0A3BB40 /* Products */,
 				A6DF8FE6739D6623D73D499617E73F46 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -152,18 +212,20 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		AFF452D8BCF6A3070837C1D255E4ECAC /* Support Files */ = {
+		B6634B1DE98D3DD3C36894A7BAD29184 /* Gloss */ = {
 			isa = PBXGroup;
 			children = (
-				8B0B8A6DF72DB2E28D44B711CE46FDD0 /* Gloss.modulemap */,
-				5863F3035FF00FC7163BA77F3CB20721 /* Gloss.xcconfig */,
-				88157DEC78A26DBF9861C98519004CE5 /* Gloss-dummy.m */,
-				76F2EB5D948B69E782128F7F8CD0A0CE /* Gloss-prefix.pch */,
-				2A924D9619D7AF04E365BE3D2E22F415 /* Gloss-umbrella.h */,
-				DC74EBAF3471B6DD6B1BE4A8C7EBDF7B /* Info.plist */,
+				564010C1330931B23BE1896E74D90B1D /* Decoder.swift */,
+				4C1A41ACFF6530E5330B6237AE297609 /* Encoder.swift */,
+				46421F68146E9D3AEDC4914952CBD18F /* ExtensionArray.swift */,
+				1071514C9E85121D7E3E2E5CAC6C73B9 /* ExtensionDecodable.swift */,
+				78F859187B4DC1DB49797CF357DA92B0 /* ExtensionDictionary.swift */,
+				29C68054C1D857C43CF230DC5F0D624E /* Gloss.swift */,
+				7370A961EFD85A1B449E0D0F7A3C3D87 /* Operators.swift */,
+				E2E7DF3CE60D897AE722E3347B7B0072 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/Gloss";
+			name = Gloss;
+			path = Gloss;
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -174,12 +236,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D02F45D563905A95EA4E3CD6AF0F6C9D /* Pods */ = {
+		C779D298E6B4D117B33322F9B0A3BB40 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F7C4CE09ACE145BE2ACF30E3431E25F9 /* Gloss */,
+				4D42EEF7E07D9B6453FD72C0546AC41D /* Gloss.framework */,
+				D6A376ADA09CDB8F2844F2C41532D93E /* Nuke.framework */,
+				5B8CA1DAB3275AFBC9B1233B02A371E9 /* Pods_MercadoPagoExam.framework */,
+				E43E537F10FE2814BC5A6CFE90042252 /* Pods_MercadoPagoExamTests.framework */,
 			);
-			name = Pods;
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CCFA2BA003562A30D5BDAB07E684D3DF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				959562613212D62541DA2B386E7CB24B /* Info.plist */,
+				B56F098D1093CD4F3F81012AFA61D629 /* Nuke.modulemap */,
+				19776434E5249B9DAC522E717BA39315 /* Nuke.xcconfig */,
+				2AF3F0E873E66CBA21D4B86A301C787A /* Nuke-dummy.m */,
+				C25536F264AB4A540BB46942EECDEA3A /* Nuke-prefix.pch */,
+				8B59F58368AD357EA6BB8A077A9E1E0C /* Nuke-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Nuke";
 			sourceTree = "<group>";
 		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
@@ -208,20 +287,27 @@
 			path = "Target Support Files/Pods-MercadoPagoExamTests";
 			sourceTree = "<group>";
 		};
-		F7C4CE09ACE145BE2ACF30E3431E25F9 /* Gloss */ = {
+		E2E7DF3CE60D897AE722E3347B7B0072 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				B2D662DAB98659018824DD70A1216105 /* Decoder.swift */,
-				A10DE9CC482224224CF94FE4FB4624B9 /* Encoder.swift */,
-				B2591A067136371451F2FDE8D8F9B6DE /* ExtensionArray.swift */,
-				852C0024C6E82FC24CDCBACB35A8EF75 /* ExtensionDecodable.swift */,
-				D6868C4B106F0FEEFB5D2965D580614D /* ExtensionDictionary.swift */,
-				FFEBE88DA47DB8CF7D74A3C46F5F9861 /* Gloss.swift */,
-				4D35554B04485072F244CE2FF0345D4B /* Operators.swift */,
-				AFF452D8BCF6A3070837C1D255E4ECAC /* Support Files */,
+				F6C926CB498F79DBC7E12A17D20F2C7D /* Gloss.modulemap */,
+				955429A34F6D66A3502B3BEE14BF9223 /* Gloss.xcconfig */,
+				4169639D65682A988C8D8FFDE22D6B9D /* Gloss-dummy.m */,
+				0DB3BD01CE0D78392649C51E02B99CAF /* Gloss-prefix.pch */,
+				CA09BADA523934DA09406264BC5F7B68 /* Gloss-umbrella.h */,
+				DC38325927F9D17D188A3A27335EEF69 /* Info.plist */,
 			);
-			name = Gloss;
-			path = Gloss;
+			name = "Support Files";
+			path = "../Target Support Files/Gloss";
+			sourceTree = "<group>";
+		};
+		F903ACE696BF6E462377785AED80A85F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B6634B1DE98D3DD3C36894A7BAD29184 /* Gloss */,
+				67053716370F962243FB12662B0C8EC9 /* Nuke */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,11 +321,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		905E9C4DDED634B748A7F72D1A0CE396 /* Headers */ = {
+		965B0B84ED501BE36A62FBC33FF3C692 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9224A0C711AE2717A356DF63B201C2AF /* Pods-MercadoPagoExam-umbrella.h in Headers */,
+				E0AE2A5B99F35919D818886F59F9A26A /* Pods-MercadoPagoExam-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA7E6E233F607A6AF83889D0EFA7A78D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3F1538E71AAFE06F3FF5A1F82C7E481 /* Nuke-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +348,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		1FB3581F4855FB816F0C4899ED1A6026 /* Nuke */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A445007023C82BE51996B505561EC8F /* Build configuration list for PBXNativeTarget "Nuke" */;
+			buildPhases = (
+				102C79780792590C1C8F876967F520E1 /* Sources */,
+				0DF7C270ECEA34B7AD8A63EF72774E49 /* Frameworks */,
+				AA7E6E233F607A6AF83889D0EFA7A78D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Nuke;
+			productName = Nuke;
+			productReference = D6A376ADA09CDB8F2844F2C41532D93E /* Nuke.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2D2D205F5014DD5C8B267A4BD825D80A /* Pods-MercadoPagoExam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D8F008AD26EF65D9767B40E9714F0E6A /* Build configuration list for PBXNativeTarget "Pods-MercadoPagoExam" */;
+			buildPhases = (
+				A6880A98C61751357CBFAD8565FDF935 /* Sources */,
+				9EE1A3A03B52278F065F49FBF65AF0E1 /* Frameworks */,
+				965B0B84ED501BE36A62FBC33FF3C692 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B651C2C43A13C1457B34DD8F55BF4566 /* PBXTargetDependency */,
+				8C150D5842BCFFE95D1E98397E1991CA /* PBXTargetDependency */,
+			);
+			name = "Pods-MercadoPagoExam";
+			productName = "Pods-MercadoPagoExam";
+			productReference = 5B8CA1DAB3275AFBC9B1233B02A371E9 /* Pods_MercadoPagoExam.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		40E7477AD67135868F5FB08136602674 /* Gloss */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22BF164D0ED6F128E787E36D290A314A /* Build configuration list for PBXNativeTarget "Gloss" */;
@@ -268,25 +398,7 @@
 			);
 			name = Gloss;
 			productName = Gloss;
-			productReference = 6335BD83DCC8EAA8123178ECC5CDF6D1 /* Gloss.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		8D629CF8A90AE1AD327B050B5B638767 /* Pods-MercadoPagoExam */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4F55D8275EDE95CB86553BB016BA96C0 /* Build configuration list for PBXNativeTarget "Pods-MercadoPagoExam" */;
-			buildPhases = (
-				358F940C3589372070D33DCC20C2C7D4 /* Sources */,
-				43EC1E68F3ECD772290C53D5A275EE48 /* Frameworks */,
-				905E9C4DDED634B748A7F72D1A0CE396 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				12E4080662779557E663EDAFC768AB3F /* PBXTargetDependency */,
-			);
-			name = "Pods-MercadoPagoExam";
-			productName = "Pods-MercadoPagoExam";
-			productReference = 68AFB3DC2AF2EB1D1E11403BA758491D /* Pods_MercadoPagoExam.framework */;
+			productReference = 4D42EEF7E07D9B6453FD72C0546AC41D /* Gloss.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D76AE13612FBB8326BE660439105F9E6 /* Pods-MercadoPagoExamTests */ = {
@@ -303,7 +415,7 @@
 			);
 			name = "Pods-MercadoPagoExamTests";
 			productName = "Pods-MercadoPagoExamTests";
-			productReference = D373BD3D6237D5E69A4EB1E22C19DAED /* Pods_MercadoPagoExamTests.framework */;
+			productReference = E43E537F10FE2814BC5A6CFE90042252 /* Pods_MercadoPagoExamTests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -323,23 +435,44 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 533010072FCD187F41B317B1E7D0BD6C /* Products */;
+			productRefGroup = C779D298E6B4D117B33322F9B0A3BB40 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				40E7477AD67135868F5FB08136602674 /* Gloss */,
-				8D629CF8A90AE1AD327B050B5B638767 /* Pods-MercadoPagoExam */,
+				1FB3581F4855FB816F0C4899ED1A6026 /* Nuke */,
+				2D2D205F5014DD5C8B267A4BD825D80A /* Pods-MercadoPagoExam */,
 				D76AE13612FBB8326BE660439105F9E6 /* Pods-MercadoPagoExamTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		358F940C3589372070D33DCC20C2C7D4 /* Sources */ = {
+		102C79780792590C1C8F876967F520E1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3D41B6328849C0DD148552938B98DB42 /* Pods-MercadoPagoExam-dummy.m in Sources */,
+				08DD2EE862771D81F72AEED3830037F5 /* Cache.swift in Sources */,
+				C6DFA4FDE4DD5BEC8B2E16B488FEA51B /* CancellationToken.swift in Sources */,
+				09A777C1F0DBD656CC239282B05C2AC3 /* DataDecoder.swift in Sources */,
+				6C4FF19CCA355061FE5BB62159D85672 /* DataLoader.swift in Sources */,
+				407A0926539AA3F046587605107453C4 /* Deduplicator.swift in Sources */,
+				8341727D7362AF57EED4B4722C4AE266 /* Loader.swift in Sources */,
+				F01E591A91E3EC9635177A3E2433ACC5 /* Manager.swift in Sources */,
+				81398D284C811060FCE52E52F778C88B /* Nuke-dummy.m in Sources */,
+				9DB93BA64A25F292A99F91F1AE2174FC /* Nuke.swift in Sources */,
+				483BA0DD9C507911686CF3F181B4F605 /* Preheater.swift in Sources */,
+				6667A6E82B4AD4DEEAF9702FC61BD489 /* Processor.swift in Sources */,
+				5ADBFB7B8E16FF5DC7CD8835FBCD7144 /* Request.swift in Sources */,
+				30F77B29DA04BD9CC5BE9C01580C8575 /* Scheduler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A6880A98C61751357CBFAD8565FDF935 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47F1A7026CBFDA6BFDAB05106C3E0BD7 /* Pods-MercadoPagoExam-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,18 +502,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		12E4080662779557E663EDAFC768AB3F /* PBXTargetDependency */ = {
+		8C150D5842BCFFE95D1E98397E1991CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Nuke;
+			target = 1FB3581F4855FB816F0C4899ED1A6026 /* Nuke */;
+			targetProxy = 98F7B58783794907D3665B7D412496EF /* PBXContainerItemProxy */;
+		};
+		B651C2C43A13C1457B34DD8F55BF4566 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Gloss;
 			target = 40E7477AD67135868F5FB08136602674 /* Gloss */;
-			targetProxy = 68FB4A11322D1FF1EBCDE24340FDA5AB /* PBXContainerItemProxy */;
+			targetProxy = 75AA07C3E9B2EE4C92B099A32C16328A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		12AFD1CE8F8CB0FA202D9E5C338E614F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5863F3035FF00FC7163BA77F3CB20721 /* Gloss.xcconfig */;
+			baseConfigurationReference = 955429A34F6D66A3502B3BEE14BF9223 /* Gloss.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -460,45 +599,7 @@
 			};
 			name = Debug;
 		};
-		1FA600C0183ED1C6B84069452E9EDECC /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6C1E9163D8A1B804F7517401A3949E7F /* Pods-MercadoPagoExam.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MercadoPagoExam/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MercadoPagoExam/Pods-MercadoPagoExam.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MercadoPagoExam;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		387D91CEE890F55E7E797277362AA9D8 /* Debug */ = {
+		3B8541BE4C570B1BEA22B98C8A743284 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1A6102E4FF9568A5235DE2C8EC9EDAFA /* Pods-MercadoPagoExam.debug.xcconfig */;
 			buildSettings = {
@@ -653,9 +754,43 @@
 			};
 			name = Debug;
 		};
+		BEECF3E7195D25F51F23F82C4E284B4D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19776434E5249B9DAC522E717BA39315 /* Nuke.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nuke/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nuke/Nuke.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = Nuke;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		C2C04E09599D4A419DB1ED70EE03F33A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5863F3035FF00FC7163BA77F3CB20721 /* Gloss.xcconfig */;
+			baseConfigurationReference = 955429A34F6D66A3502B3BEE14BF9223 /* Gloss.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -688,6 +823,79 @@
 			};
 			name = Debug;
 		};
+		E8FC9AA02F4B291276B06255927866EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 19776434E5249B9DAC522E717BA39315 /* Nuke.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Nuke/Nuke-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Nuke/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Nuke/Nuke.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = Nuke;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		F63E64E1E0166FB91E3C1ED505BCFB98 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C1E9163D8A1B804F7517401A3949E7F /* Pods-MercadoPagoExam.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MercadoPagoExam/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MercadoPagoExam/Pods-MercadoPagoExam.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MercadoPagoExam;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -709,6 +917,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		2A445007023C82BE51996B505561EC8F /* Build configuration list for PBXNativeTarget "Nuke" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8FC9AA02F4B291276B06255927866EC /* Debug */,
+				BEECF3E7195D25F51F23F82C4E284B4D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -718,11 +935,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4F55D8275EDE95CB86553BB016BA96C0 /* Build configuration list for PBXNativeTarget "Pods-MercadoPagoExam" */ = {
+		D8F008AD26EF65D9767B40E9714F0E6A /* Build configuration list for PBXNativeTarget "Pods-MercadoPagoExam" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				387D91CEE890F55E7E797277362AA9D8 /* Debug */,
-				1FA600C0183ED1C6B84069452E9EDECC /* Release */,
+				3B8541BE4C570B1BEA22B98C8A743284 /* Debug */,
+				F63E64E1E0166FB91E3C1ED505BCFB98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

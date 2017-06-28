@@ -14,9 +14,12 @@ class PaymentComponentWithImageCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     
+    let cornerRadius = CGFloat(floatLiteral: 10.0)
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        cardImage.layer.cornerRadius = cornerRadius
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

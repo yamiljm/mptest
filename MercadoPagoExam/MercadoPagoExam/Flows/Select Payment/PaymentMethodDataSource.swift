@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Nuke
 
 class PaymentMethodDataSource: NSObject, UITableViewDelegate, PaymentMethodComponentDataSource {
 
@@ -39,8 +40,14 @@ class PaymentMethodDataSource: NSObject, UITableViewDelegate, PaymentMethodCompo
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
             return UITableViewCell()
         }
-        cell.title.text = paymentMethods?[indexPath.row].name
+        let paymentMethod = paymentMethods?[indexPath.row]
+        cell.title.text = paymentMethod?.name
         cell.setSelected(false, animated: false)
+//        cell.cardImage.image = nil
+//        
+        if let urlText = paymentMethod?.secureThumbnail, let url = URL(string: urlText) {
+            Nuke.loadImage(with: url, into: cell.cardImage)
+        }
         return cell
     }
 
