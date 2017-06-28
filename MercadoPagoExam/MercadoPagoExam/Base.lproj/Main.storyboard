@@ -104,14 +104,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="paymentComponentWithImageCell" id="tJz-Km-TSD" customClass="PaymentComponentWithImageCell" customModule="MercadoPagoExam">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="paymentComponentWithImageCell" id="tJz-Km-TSD" customClass="PaymentComponentWithImageCell" customModule="MercadoPagoExam">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tJz-Km-TSD" id="Xte-73-bUB">
-                                    <rect key="frame" x="0.0" y="0.0" width="336" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aTY-Sh-94t" userLabel="Card Image">
+                                        <imageView userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="CreditCardPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="aTY-Sh-94t" userLabel="Card Image">
                                             <rect key="frame" x="8" y="0.0" width="55" height="36"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
@@ -159,4 +159,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="-570.76461769115451"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="CreditCardPlaceholder" width="145" height="75"/>
+    </resources>
 </document>

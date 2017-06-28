@@ -40,7 +40,7 @@ class PaymentMethodDataSource: NSObject, UITableViewDelegate, PaymentMethodCompo
             return UITableViewCell()
         }
         cell.title.text = paymentMethods?[indexPath.row].name
-        
+        cell.setSelected(false, animated: false)
         return cell
     }
 
