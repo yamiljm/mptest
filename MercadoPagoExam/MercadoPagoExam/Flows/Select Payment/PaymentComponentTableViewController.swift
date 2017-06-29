@@ -54,7 +54,9 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
             //TODO: Mostrar error
             return
         }
-        tableView.reloadData()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 
     /*
