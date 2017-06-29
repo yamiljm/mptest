@@ -85,6 +85,9 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
         return validAmount
     }
     
+    @IBAction func unwindToAmountScreen(segue: UIStoryboardSegue) {
+    }
+    
     private func isValidAmount() -> Bool {
         
         guard let amount = formatter?.number(from: amountField.text ?? "0") else {

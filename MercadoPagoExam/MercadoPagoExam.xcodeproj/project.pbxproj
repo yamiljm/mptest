@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		AA83065FF4BBCACE6A368B25 /* Pods_MercadoPagoExam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A059519C060BBAF5FE72988A /* Pods_MercadoPagoExam.framework */; };
 		B751345CC9C0068D717E521E /* Pods_MercadoPagoExamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D46FB93D688F89A30528D86B /* Pods_MercadoPagoExamTests.framework */; };
+		C6151E8D1F05B9AF00A71633 /* PaymentComponentWithoutImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6151E8C1F05B9AF00A71633 /* PaymentComponentWithoutImageCell.swift */; };
+		C6151E8F1F05B9E200A71633 /* InstallmentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6151E8E1F05B9E200A71633 /* InstallmentsViewController.swift */; };
 		C62CF73E1EF99ABB00091503 /* URLRequest+HTTPMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF73D1EF99ABB00091503 /* URLRequest+HTTPMethods.swift */; };
 		C62CF7421EF9C8F500091503 /* PaymentMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7411EF9C8F500091503 /* PaymentMethod.swift */; };
 		C62CF7441EFB260000091503 /* PaymentMethodSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7431EFB260000091503 /* PaymentMethodSettings.swift */; };
@@ -70,6 +72,8 @@
 		8DFBABF93D8049A0F77AC0D0 /* Pods-MercadoPagoExamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoPagoExamTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MercadoPagoExamTests/Pods-MercadoPagoExamTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A059519C060BBAF5FE72988A /* Pods_MercadoPagoExam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MercadoPagoExam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C28B9BF99CAFD6A22230479A /* Pods-MercadoPagoExamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MercadoPagoExamTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MercadoPagoExamTests/Pods-MercadoPagoExamTests.release.xcconfig"; sourceTree = "<group>"; };
+		C6151E8C1F05B9AF00A71633 /* PaymentComponentWithoutImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentComponentWithoutImageCell.swift; sourceTree = "<group>"; };
+		C6151E8E1F05B9E200A71633 /* InstallmentsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstallmentsViewController.swift; sourceTree = "<group>"; };
 		C62CF73D1EF99ABB00091503 /* URLRequest+HTTPMethods.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+HTTPMethods.swift"; sourceTree = "<group>"; };
 		C62CF7411EF9C8F500091503 /* PaymentMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethod.swift; sourceTree = "<group>"; };
 		C62CF7431EFB260000091503 /* PaymentMethodSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodSettings.swift; sourceTree = "<group>"; };
@@ -186,6 +190,8 @@
 				C6389A001F01B1D00021645C /* PaymentMethodAmountViewController.swift */,
 				C6389A061F02E7890021645C /* CellDataModel.swift */,
 				C6389A1F1F04396F0021645C /* PaymentComponentWithImageCell.swift */,
+				C6151E8C1F05B9AF00A71633 /* PaymentComponentWithoutImageCell.swift */,
+				C6151E8E1F05B9E200A71633 /* InstallmentsViewController.swift */,
 			);
 			path = "Select Payment";
 			sourceTree = "<group>";
@@ -529,6 +535,7 @@
 				C6389A201F04396F0021645C /* PaymentComponentWithImageCell.swift in Sources */,
 				C6389A051F02E24B0021645C /* PaymentMethodComponentDataSource.swift in Sources */,
 				C63C8C041EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */,
+				C6151E8F1F05B9E200A71633 /* InstallmentsViewController.swift in Sources */,
 				C62CF7511EFC84CE00091503 /* APIConnector.swift in Sources */,
 				C6389A071F02E7890021645C /* CellDataModel.swift in Sources */,
 				C6389A011F01B1D00021645C /* PaymentComponentTableViewController.swift in Sources */,
@@ -549,6 +556,7 @@
 				C63899F71F00B8210021645C /* SelectedPayment.swift in Sources */,
 				C63899FB1F00BC6A0021645C /* PaymentStep.swift in Sources */,
 				C62CF7531EFC84CE00091503 /* PaymentMethodsAPIConnector.swift in Sources */,
+				C6151E8D1F05B9AF00A71633 /* PaymentComponentWithoutImageCell.swift in Sources */,
 				C63C8C1A1EF86EED000A76D5 /* URLSessionNetworkExecutor.swift in Sources */,
 				C62CF7521EFC84CE00091503 /* MercadoPagoAPIConnector.swift in Sources */,
 				C62CF7571EFCB32300091503 /* Double+Formatter.swift in Sources */,

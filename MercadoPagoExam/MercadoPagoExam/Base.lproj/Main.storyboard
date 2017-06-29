@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Payment Method Amount View Controller-->
+        <!--Amount Scene-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="PaymentMethodAmountViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Amount Scene" customClass="PaymentMethodAmountViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -48,7 +48,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Continuar"/>
                                 <connections>
-                                    <segue destination="TF7-D2-2St" kind="show" id="eL3-DV-4ba"/>
+                                    <segue destination="TF7-D2-2St" kind="show" identifier="paymentMethod" id="eL3-DV-4ba"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nb-Mf-6Xb">
@@ -96,10 +96,10 @@
             </objects>
             <point key="canvasLocation" x="1076" y="111.99400299850076"/>
         </scene>
-        <!--Payment Component Table View Controller-->
+        <!--Payment Method Type Scene-->
         <scene sceneID="q0E-wP-zlM">
             <objects>
-                <tableViewController id="TF7-D2-2St" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
+                <tableViewController id="TF7-D2-2St" userLabel="Payment Method Type Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Abs-e2-il6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -137,6 +137,7 @@
                                 <connections>
                                     <outlet property="cardImage" destination="aTY-Sh-94t" id="Ne9-fk-wnA"/>
                                     <outlet property="title" destination="Twt-we-HqE" id="ffD-Dn-WJD"/>
+                                    <segue destination="Jf0-z9-Cab" kind="show" identifier="cardIssuer" id="cly-gF-zxJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -149,6 +150,109 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uGF-7x-Ash" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1981.5999999999999" y="111.99400299850076"/>
+        </scene>
+        <!--Card Issuer Scene-->
+        <scene sceneID="w1M-F7-PGr">
+            <objects>
+                <tableViewController id="Jf0-z9-Cab" userLabel="Card Issuer Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gHn-Fz-1Zs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="paymentComponentWithImageCell" id="c0Z-4d-EGk" customClass="PaymentComponentWithImageCell" customModule="MercadoPagoExam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c0Z-4d-EGk" id="nXc-Sm-qKv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="ypY-fl-9tG" kind="show" identifier="installments" id="KJx-Ky-TFR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Jf0-z9-Cab" id="bP3-wn-zRx"/>
+                            <outlet property="delegate" destination="Jf0-z9-Cab" id="gRf-WZ-KUr"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cFM-Ge-kSI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2878" y="112"/>
+        </scene>
+        <!--Installments Scene-->
+        <scene sceneID="gwq-HH-Xkg">
+            <objects>
+                <viewController id="ypY-fl-9tG" userLabel="Installments Scene" customClass="InstallmentsViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RQB-ih-e2K"/>
+                        <viewControllerLayoutGuide type="bottom" id="jbM-3Z-Ax7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pfA-FZ-js1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-iA-qgB">
+                                <rect key="frame" x="0.0" y="603" width="375" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.1019607843" green="0.61960784310000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <color key="tintColor" red="0.98598768749999999" green="1" blue="0.99880329459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Finalizar">
+                                    <color key="titleShadowColor" red="0.98598768746555976" green="1" blue="0.99880329462468942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="thK-ms-NGu" kind="unwind" unwindAction="unwindToAmountScreenWithSegue:" id="Ohb-TB-NbZ"/>
+                                </connections>
+                            </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQF-Yp-QIs">
+                                <rect key="frame" x="0.0" y="72" width="375" height="523"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="YI3-ow-zfP" kind="embed" id="yvV-H4-IzW"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="finishButton" destination="yyn-iA-qgB" id="uAp-Kx-3GU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hNA-Ls-gPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="thK-ms-NGu" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3836" y="116.49175412293854"/>
+        </scene>
+        <!--Installments Table Scene-->
+        <scene sceneID="nZU-Uj-oFS">
+            <objects>
+                <tableViewController id="YI3-ow-zfP" userLabel="Installments Table Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LzP-tA-hdI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Sij-5l-i4W" customClass="PaymentComponentWithoutImageCell" customModule="MercadoPagoExam" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Sij-5l-i4W" id="szF-C6-kHV">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YI3-ow-zfP" id="AEq-3x-DSM"/>
+                            <outlet property="delegate" destination="YI3-ow-zfP" id="I2S-k7-T2F"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zvv-Sr-Rwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4889" y="126"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ge2-pE-EEz">
