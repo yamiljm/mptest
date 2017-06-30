@@ -22,7 +22,7 @@ struct PaymentStepFactory {
         case .method:
             return PaymentStep(ofType: .method, dataSource: PaymentMethodDataSource())
         case .cardIssuer:
-            return PaymentStep(ofType: .cardIssuer)
+            return PaymentStep(ofType: .cardIssuer, dataSource: CardIssuersDataSource())
         case .installments:
             return PaymentStep(ofType: .installments)
         }
@@ -53,10 +53,10 @@ struct PaymentStepOrderManager {
 struct PaymentStep {
     
     let type: PaymentStepType
-    let dataSource: PaymentMethodDataSource?
+    let dataSource: PaymentMethodComponentDataSource?
     let selectedPayment: SelectedPayment?
     
-    init(ofType type: PaymentStepType, dataSource: PaymentMethodDataSource?=nil, selectedPayment: SelectedPayment?=nil) {
+    init(ofType type: PaymentStepType, dataSource: PaymentMethodComponentDataSource?=nil, selectedPayment: SelectedPayment?=nil) {
         self.type = type
         self.dataSource = dataSource
         self.selectedPayment = selectedPayment

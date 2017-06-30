@@ -70,6 +70,7 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
             let destination = segue.destination as? PaymentComponentTableViewController
             if let nextStep = PaymentStepOrderManager.stepAfter(step: currentStep) {
                 destination?.currentStep = nextStep
+                destination?.selectedPayment = selectedPayment
             }
         }
     }

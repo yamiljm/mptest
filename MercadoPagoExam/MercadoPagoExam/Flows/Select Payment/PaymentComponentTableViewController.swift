@@ -13,16 +13,28 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
     var currentStep: PaymentStep?
     var selectedPayment: SelectedPayment?
     var dataSource: PaymentMethodComponentDataSource?
+    var viewInformation: ViewInformation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        viewInformation = ViewInformation.create(forStepType: currentStep?.type)
 
         dataSource = currentStep?.dataSource
         dataSource?.dataLoaded = dataLoaded
+        dataSource?.viewInformation = viewInformation
         
         dataSource?.startLoadingData(withInfoFrom: selectedPayment)
         
-        tableView.delegate = dataSource
+        tableView.delegate = self
+        
+        
+        if let nib = viewInformation?.cellNibName, let identifier = viewInformation?.cellIdentifier {
+            
+            let uiNib = UINib(nibName: nib, bundle: Bundle.main)
+            
+            self.tableView?.register(uiNib, forCellReuseIdentifier: identifier)
+        }
         
         self.clearsSelectionOnViewWillAppear = false
 
@@ -47,7 +59,19 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         //TODO: fix this
         return (dataSource?.tableView(tableView, cellForRowAt: indexPath))!
+        
     }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        dataSource?.completePaymentInfo(intoPayment: selectedPayment, withIndexPath: indexPath)
+        
+        guard let segueIdentifier = viewInformation?.segueIdentifier else {
+            return
+        }
+        performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+    
     
     func dataLoaded(_ error: Error?) {
         if error != nil {
@@ -59,14 +83,23 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
         }
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+//        dataSource?.completePaymentInfo(tableView,intoPayment: selectedPayment)
+        
+        if segue.destination.isKind(of: PaymentComponentTableViewController.self) {
+            let destination = segue.destination as? PaymentComponentTableViewController
+            if let nextStep = PaymentStepOrderManager.stepAfter(step: currentStep) {
+                destination?.currentStep = nextStep
+                destination?.selectedPayment = selectedPayment
+            }
+        }
     }
-    */
+    
 
 }

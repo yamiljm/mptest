@@ -11,7 +11,12 @@ import UIKit
 
 protocol PaymentMethodComponentDataSource: UITableViewDataSource, UITableViewDelegate {
     
-    func startLoadingData(withInfoFrom: SelectedPayment?)
+    var viewInformation: ViewInformation? {get set}
     
     var dataLoaded: ((_ : Error?) -> Void)? {get set}
+    
+    func startLoadingData(withInfoFrom: SelectedPayment?)
+    
+    func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath)
+    
 }

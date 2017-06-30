@@ -11,10 +11,8 @@ import Foundation
 final class SelectedPayment {
     
     var amount: NSNumber?
+    var method: PaymentMethod?
     var cardIssuer: CardIssuer?
     var installments: Installments?
-    
-    
-    
     
 }

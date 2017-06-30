@@ -14,6 +14,9 @@ struct ModelCreator<M: Decodable> {
     let onSucces: (_ models: [M]?) -> Void
     let onError: (_ error: Error) -> Void
     
+    //TODO: Acá faltaría generalizar/implementar que se pueda crear a partir de un 
+    //json cuyo root sea un objeto
+    
     func createModels(json: [[String : Any]]?, error: Error?) {
         if let error = error {
             onError(error)

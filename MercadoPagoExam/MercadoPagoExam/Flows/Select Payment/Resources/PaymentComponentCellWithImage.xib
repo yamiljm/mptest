@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PaymentComponentWithImageCell" id="kKj-Cs-CFO" customClass="PaymentComponentWithImageCell" customModule="MercadoPagoExam" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kKj-Cs-CFO" id="p21-Fm-SMY">
+                <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEV-SD-Fqd" userLabel="Title">
+                        <rect key="frame" x="122" y="12" width="223" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wiT-dx-Yum" userLabel="Card Image">
+                        <rect key="frame" x="12" y="4" width="90" height="36"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="5PT-Ue-sjO"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="HZB-sz-ShU"/>
+                            <constraint firstAttribute="width" constant="90" id="b5E-TD-zpE"/>
+                            <constraint firstAttribute="height" constant="36" id="yVO-GV-Nqv"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wiT-dx-Yum" firstAttribute="leading" secondItem="p21-Fm-SMY" secondAttribute="leading" constant="12" id="Hb6-3d-FHK"/>
+                    <constraint firstItem="wiT-dx-Yum" firstAttribute="top" secondItem="p21-Fm-SMY" secondAttribute="top" constant="4" id="UUd-Xl-y8w"/>
+                    <constraint firstItem="KEV-SD-Fqd" firstAttribute="leading" secondItem="wiT-dx-Yum" secondAttribute="trailing" constant="20" id="bpL-9U-I6B"/>
+                    <constraint firstItem="KEV-SD-Fqd" firstAttribute="centerY" secondItem="p21-Fm-SMY" secondAttribute="centerY" id="cAU-0U-7X5"/>
+                    <constraint firstAttribute="bottom" secondItem="wiT-dx-Yum" secondAttribute="bottom" constant="4" id="rpR-J3-r7x"/>
+                </constraints>
+            </tableViewCellContentView>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="KEV-SD-Fqd" secondAttribute="trailing" constant="30" id="mGE-s2-cS4"/>
+            </constraints>
+            <connections>
+                <outlet property="cardImage" destination="wiT-dx-Yum" id="a6E-lu-Zj9"/>
+                <outlet property="title" destination="KEV-SD-Fqd" id="8Oh-t6-7ng"/>
+            </connections>
+            <point key="canvasLocation" x="48.5" y="460"/>
+        </tableViewCell>
+    </objects>
+</document>

@@ -8,9 +8,13 @@
 
 import UIKit
 
-class InstallmentsViewController: UIViewController {
+class InstallmentsViewController: UIViewController, PaymentStepable {
 
     @IBOutlet weak var finishButton: UIButton!
+    
+    var selectedPayment: SelectedPayment?
+    var currentStep: PaymentStep?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
