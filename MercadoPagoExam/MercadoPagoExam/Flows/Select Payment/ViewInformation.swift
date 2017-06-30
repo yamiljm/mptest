@@ -29,7 +29,7 @@ struct ViewInformation {
         case .cardIssuer:
             return ViewInformation(cellNibName: "PaymentComponentCellWithImage", cellIdentifier: "PaymentComponentWithImageCell", segueIdentifier: "installments", tableTitle: "Seleccione un emisor")
         case .installments:
-            return ViewInformation(cellNibName: "", cellIdentifier: "", segueIdentifier: nil, tableTitle: "Seleccione cantidad de cuotas")
+            return ViewInformation(cellNibName: "PaymentComponentCellWithoutImage", cellIdentifier: "PaymentComponentCellWithoutImage", segueIdentifier: nil, tableTitle: "Seleccione cantidad de cuotas")
         default:
             return nil
             

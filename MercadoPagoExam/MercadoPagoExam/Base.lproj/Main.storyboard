@@ -186,7 +186,7 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="523"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
-                                    <segue destination="YI3-ow-zfP" kind="embed" id="yvV-H4-IzW"/>
+                                    <segue destination="YI3-ow-zfP" kind="embed" identifier="installmentsTable" id="yvV-H4-IzW"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -194,6 +194,7 @@
                     </view>
                     <connections>
                         <outlet property="finishButton" destination="yyn-iA-qgB" id="uAp-Kx-3GU"/>
+                        <outlet property="tableViewContainer" destination="pQF-Yp-QIs" id="Gtl-VK-TCt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hNA-Ls-gPl" userLabel="First Responder" sceneMemberID="firstResponder"/>

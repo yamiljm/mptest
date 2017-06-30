@@ -92,13 +92,14 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
         
 //        dataSource?.completePaymentInfo(tableView,intoPayment: selectedPayment)
         
-        if segue.destination.isKind(of: PaymentComponentTableViewController.self) {
-            let destination = segue.destination as? PaymentComponentTableViewController
+//        if segue.destination.isKind(of: PaymentStepable) {
+        if var destination = segue.destination as? PaymentStepable {
             if let nextStep = PaymentStepOrderManager.stepAfter(step: currentStep) {
-                destination?.currentStep = nextStep
-                destination?.selectedPayment = selectedPayment
+                destination.currentStep = nextStep
+                destination.selectedPayment = selectedPayment
             }
         }
+//        }
     }
     
 

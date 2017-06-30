@@ -13,12 +13,14 @@ extension Formatter {
     static let number = NumberFormatter()
 }
 
-extension Double {
+extension NSNumber {
+    
+    //TODO: sacar a constantes
+    
     func fractionDigits(min: Int = 2, max: Int = 2, roundingMode: NumberFormatter.RoundingMode = .up) -> String {
         Formatter.number.minimumFractionDigits = min
         Formatter.number.maximumFractionDigits = max
         Formatter.number.roundingMode = roundingMode
-//        Formatter.number.numberStyle = .
         return Formatter.number.string(for: self) ?? ""
     }
 }

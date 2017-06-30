@@ -24,7 +24,7 @@ struct PaymentStepFactory {
         case .cardIssuer:
             return PaymentStep(ofType: .cardIssuer, dataSource: CardIssuersDataSource())
         case .installments:
-            return PaymentStep(ofType: .installments)
+            return PaymentStep(ofType: .installments, dataSource: InstallmentsDataSource())
         }
     }
 }

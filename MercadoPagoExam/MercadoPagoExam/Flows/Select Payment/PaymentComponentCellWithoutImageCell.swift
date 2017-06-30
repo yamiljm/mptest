@@ -1,15 +1,17 @@
 //
-//  PaymentComponentWithoutImageCell.swift
+//  PaymentComponentCellWithoutImageCell.swift
 //  MercadoPagoExam
 //
-//  Created by Yamil Jalil Maluf on 29/6/17.
+//  Created by Yamil Jalil Maluf on 30/6/17.
 //  Copyright © 2017 Yamil Jalil Maluf. All rights reserved.
 //
 
 import UIKit
 
-class PaymentComponentWithoutImageCell: UITableViewCell {
+class PaymentComponentCellWithoutImageCell: UITableViewCell {
 
+    @IBOutlet weak var title: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
