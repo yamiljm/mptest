@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PaymentComponentCellWithoutImageCell: UITableViewCell {
+class PaymentComponentCellWithoutImage: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     

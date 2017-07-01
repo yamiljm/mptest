@@ -40,11 +40,6 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
 
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -87,19 +82,13 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
     // MARK: - Navigation
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-        
-//        dataSource?.completePaymentInfo(tableView,intoPayment: selectedPayment)
-        
-//        if segue.destination.isKind(of: PaymentStepable) {
+
         if var destination = segue.destination as? PaymentStepable {
             if let nextStep = PaymentStepOrderManager.stepAfter(step: currentStep) {
                 destination.currentStep = nextStep
                 destination.selectedPayment = selectedPayment
             }
         }
-//        }
     }
     
 
