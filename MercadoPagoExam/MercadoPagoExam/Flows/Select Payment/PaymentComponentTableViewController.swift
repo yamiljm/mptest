@@ -64,14 +64,25 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
         return CGFloat(48.0)
     }
     
-    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         dataSource?.completePaymentInfo(intoPayment: selectedPayment, withIndexPath: indexPath)
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? PaymentComponentCellWithoutImage {
+            cell.accessoryType = .checkmark
+        }
         
         guard let segueIdentifier = viewInformation?.segueIdentifier else {
             return
         }
         performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+    
+    override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        
+        if let cell = tableView.cellForRow(at: indexPath) as? PaymentComponentCellWithoutImage {
+            cell.accessoryType = .none
+        }
     }
     
     
