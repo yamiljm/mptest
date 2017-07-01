@@ -225,9 +225,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xyo-Fx-huf" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P0a-bK-Joc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="P0a-bK-Joc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.1019607843" green="0.61960784310000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.98598768749999999" green="1" blue="0.99880329459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.1019607843" green="0.61960784310000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.98598768749999999" green="1" blue="0.99880329459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

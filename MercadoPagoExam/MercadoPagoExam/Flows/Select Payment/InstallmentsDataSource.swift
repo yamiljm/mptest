@@ -14,7 +14,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     
     var viewInformation: ViewInformation?
     
-    var installments: [Installments]?
+    var installmentsPayerCosts: [PayerCosts]?
     
     var service: InstallmentsService?
     
@@ -33,15 +33,17 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
             return
         }
         //TODO: revisar si poner waek a self
-        self.installments = installments
+        
+        //Asumo que siempre viene una installment
+        self.installmentsPayerCosts = installments?.first?.payerCosts
         self.dataLoaded?(error)
     }
     
     func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath) {
-        guard let installments = installments, index.row < installments.count else {
+        guard let payerCosts = installmentsPayerCosts, index.row < payerCosts.count else {
             return
         }
-        payment?.installments = installments[index.row]
+        payment?.installmentsPayerCost = payerCosts[index.row]
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -52,7 +54,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
         
         //TODO: asumo que siempre vienen un installment
         
-        let payerCost = installments?.first?.payerCosts?[indexPath.row]
+        let payerCost = installmentsPayerCosts?[indexPath.row]
         cell.title.text = payerCost?.recommendedMessage
         cell.setSelected(false, animated: false)
         
@@ -70,7 +72,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return installments?.first?.payerCosts?.count ?? 0
+        return installmentsPayerCosts?.count ?? 0
     }
     
 }

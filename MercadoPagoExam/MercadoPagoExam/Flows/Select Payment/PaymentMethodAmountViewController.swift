@@ -39,23 +39,28 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
     deinit {
         NotificationCenter.default.removeObserver(self)
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if selectedPayment?.amount == nil {
-            amountField.text = formatter?.string(from: 0)
-            amountField.becomeFirstResponder()
-        } else {
+        
+        guard let selectedPayment = selectedPayment else {
+            return
+        }
+        
+        if selectedPayment.hasAnAmount() {
             //TODO: revisar
             amountField.resignFirstResponder()
+        } else {
+            amountField.text = formatter?.string(from: 0)
+            amountField.becomeFirstResponder()
+        }
         
+        if selectedPayment.isComplete() {
+            showPaymentInfoMessage(selectedPayment)
         }
     }
+    
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -170,6 +175,23 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
                            completion: nil)
         }
     }
+    
+    func showPaymentInfoMessage(_ selectedPayment: SelectedPayment) {
+        
+        //TODO: internacionalizar title
+        
+        let alertController = UIAlertController(title: "Pago seleccionado", message: nil, preferredStyle: .alert)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        
+        alertController.addAction(okAction)
+        
+        alertController.setValue(selectedPayment.attributedDescription(), forKey: "attributedMessage")
+        
+        self.present(alertController, animated: true, completion: nil)
+        
+    }
+    
 }
 
 fileprivate extension String {
@@ -186,5 +208,95 @@ fileprivate extension String {
     func containsDecimalSeparator() -> Bool {
         let decimalSeparator = AppConfiguration.shared.locale().decimalSeparator ?? "."
         return self.contains(decimalSeparator)
+    }
+}
+
+
+fileprivate extension SelectedPayment {
+    
+    var fontSize: CGFloat {
+        get {
+            return UIFont.systemFontSize
+        }
+    }
+    
+    var bold: [String : Any] {
+        get {
+            return [NSFontAttributeName: UIFont.boldSystemFont(ofSize: fontSize),
+                    NSParagraphStyleAttributeName: paragraphStyle
+            ]
+        }
+    }
+    
+    var noBold: [String : Any] {
+        get {
+            return [NSFontAttributeName: UIFont.systemFont(ofSize: fontSize),
+                    NSParagraphStyleAttributeName: paragraphStyle
+            ]
+        }
+    }
+    
+    var separator: String {
+        get {
+            return ": "
+        }
+    }
+    
+    var paragraphStyle: NSParagraphStyle {
+        get {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.alignment = .left
+            return paragraphStyle
+        }
+    }
+    
+    
+    var newLine: NSAttributedString {
+        get {
+            return NSAttributedString(string: "\n", attributes: nil)
+        }
+    }
+    
+    func attributedDescription() -> NSAttributedString {
+        
+        guard let amount = self.amount, let methodName = self.method?.name, let payerCost = self.installmentsPayerCost else {
+            //TODO: handle this error
+            return NSAttributedString(string: "UPSS")
+        }
+        
+        let newMessage = NSMutableAttributedString()
+        
+        newMessage.append(newLine)
+        
+        newMessage.append(createMessagePart(title: "Importe", text: amount.fractionDigits()))
+        
+        newMessage.append(newLine)
+        
+        newMessage.append(createMessagePart(title: "Medio de pago", text: methodName))
+        
+        newMessage.append(newLine)
+        
+        if let issuerName = self.cardIssuer?.name {
+            newMessage.append(createMessagePart(title: "Emisor", text: issuerName))
+            newMessage.append(newLine)
+        }
+        
+        newMessage.append(createMessagePart(title: "Cuotas", text: payerCost.recommendedMessage))
+
+        return newMessage
+        
+    }
+    
+    private func createMessagePart(title: String, text: String) -> NSMutableAttributedString {
+        
+        let messagePart = NSMutableAttributedString(string: title, attributes: bold)
+        
+        messagePart.append(NSAttributedString(string: separator, attributes: bold))
+        
+        let textPart = NSAttributedString(string: text, attributes: noBold)
+        
+        messagePart.append(textPart)
+        
+        return messagePart
     }
 }

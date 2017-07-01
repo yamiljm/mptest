@@ -23,7 +23,7 @@
 		C62CF7521EFC84CE00091503 /* MercadoPagoAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF74F1EFC84CE00091503 /* MercadoPagoAPIConnector.swift */; };
 		C62CF7531EFC84CE00091503 /* PaymentMethodsAPIConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7501EFC84CE00091503 /* PaymentMethodsAPIConnector.swift */; };
 		C62CF7551EFC908D00091503 /* ModelCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7541EFC908D00091503 /* ModelCreator.swift */; };
-		C62CF7571EFCB32300091503 /* Double+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7561EFCB32200091503 /* Double+Formatter.swift */; };
+		C62CF7571EFCB32300091503 /* NSNumber+Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C62CF7561EFCB32200091503 /* NSNumber+Formatter.swift */; };
 		C63899F51EFE28160021645C /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63899F41EFE28160021645C /* AppConfiguration.swift */; };
 		C63899F71F00B8210021645C /* SelectedPayment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63899F61F00B8210021645C /* SelectedPayment.swift */; };
 		C63899F91F00BC250021645C /* PaymentStepable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63899F81F00BC250021645C /* PaymentStepable.swift */; };
@@ -93,7 +93,7 @@
 		C62CF74F1EFC84CE00091503 /* MercadoPagoAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MercadoPagoAPIConnector.swift; sourceTree = "<group>"; };
 		C62CF7501EFC84CE00091503 /* PaymentMethodsAPIConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsAPIConnector.swift; sourceTree = "<group>"; };
 		C62CF7541EFC908D00091503 /* ModelCreator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelCreator.swift; sourceTree = "<group>"; };
-		C62CF7561EFCB32200091503 /* Double+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+Formatter.swift"; sourceTree = "<group>"; };
+		C62CF7561EFCB32200091503 /* NSNumber+Formatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSNumber+Formatter.swift"; sourceTree = "<group>"; };
 		C63899F01EFDD5750021645C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
 		C63899F11EFDD5750021645C /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C63899F21EFDD8590021645C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
@@ -179,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				C62CF73D1EF99ABB00091503 /* URLRequest+HTTPMethods.swift */,
-				C62CF7561EFCB32200091503 /* Double+Formatter.swift */,
+				C62CF7561EFCB32200091503 /* NSNumber+Formatter.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -599,7 +599,7 @@
 				C62CF7531EFC84CE00091503 /* PaymentMethodsAPIConnector.swift in Sources */,
 				C63C8C1A1EF86EED000A76D5 /* URLSessionNetworkExecutor.swift in Sources */,
 				C62CF7521EFC84CE00091503 /* MercadoPagoAPIConnector.swift in Sources */,
-				C62CF7571EFCB32300091503 /* Double+Formatter.swift in Sources */,
+				C62CF7571EFCB32300091503 /* NSNumber+Formatter.swift in Sources */,
 				C67C20801EF60D6900C85958 /* ViewController.swift in Sources */,
 				C63C8C1E1EF88B77000A76D5 /* LoggerType.swift in Sources */,
 				C63C8C151EF85700000A76D5 /* Environmentable.swift in Sources */,

@@ -13,6 +13,14 @@ final class SelectedPayment {
     var amount: NSNumber?
     var method: PaymentMethod?
     var cardIssuer: CardIssuer?
-    var installments: Installments?
+    var installmentsPayerCost: PayerCosts?
     
+    func isComplete() -> Bool {
+        //Asumo esto como una posible regla de negocio para este ejercicio
+        return amount != nil && method != nil  && installmentsPayerCost != nil
+    }
+    
+    func hasAnAmount() -> Bool {
+        return amount != nil 
+    }
 }
