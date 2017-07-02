@@ -33,7 +33,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     
     //MARK: PaymentMethodComponentDataSource
     
-    func updateModels(_ installments: [Installments]?, error: Error?) {
+    func updateModels(_ installments: [Installment]?, error: Error?) {
         if error != nil {
             //TODO: manejar error
             return

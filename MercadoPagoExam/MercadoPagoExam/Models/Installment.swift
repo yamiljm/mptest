@@ -9,7 +9,7 @@
 import Foundation
 import Gloss
 
-struct Installments: Decodable {
+struct Installment: Decodable {
     
     private struct Keys {
         static let paymentMethodId = "payment_method_id"

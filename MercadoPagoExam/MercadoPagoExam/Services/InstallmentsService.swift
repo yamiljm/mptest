@@ -13,9 +13,9 @@ final class InstallmentsService {
     let apiConnector = PaymentMethodsAPIConnector()
     
     //TODO: hacerlo weak
-    var delegate: (_: [Installments]?, _: Error?) -> Void
+    var delegate: (_: [Installment]?, _: Error?) -> Void
     
-    init(delegate: @escaping (_: [Installments]?, _: Error?) -> Void) {
+    init(delegate: @escaping (_: [Installment]?, _: Error?) -> Void) {
         self.delegate = delegate
     }
     
@@ -26,12 +26,12 @@ final class InstallmentsService {
             self.delegate(nil, error)
         }
         
-        let onSucces = { (models: [Installments]?) -> Void in
+        let onSucces = { (models: [Installment]?) -> Void in
             //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
             self.delegate(models, nil)
         }
         
-        let installmentsModelCreator = ModelCreator<Installments>(onSucces: onSucces, onError: onError)
+        let installmentsModelCreator = ModelCreator<Installment>(onSucces: onSucces, onError: onError)
         
         apiConnector.retriveInstallments(forPaymentMethodId: paymentMethodId, andIssuerId: issuerId, andAmount: amount, withModelCreator: installmentsModelCreator)
         

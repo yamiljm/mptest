@@ -50,7 +50,7 @@ final class PaymentMethodsAPIConnector: MercadoPagoAPIConnector {
         return networkExecutor.execute(request: urlRequest, completionHandler: modelCreator.createModels)
     }
     
-    func retriveInstallments(forPaymentMethodId paymentMethodId: String, andIssuerId issuerId: String?, andAmount amount: NSNumber, withModelCreator modelCreator: ModelCreator<Installments>) {
+    func retriveInstallments(forPaymentMethodId paymentMethodId: String, andIssuerId issuerId: String?, andAmount amount: NSNumber, withModelCreator modelCreator: ModelCreator<Installment>) {
         
         guard let installmentsURL = createInstallmentsURL(forPaymentMethodId: paymentMethodId, andIssuerId: issuerId, withAmount: amount) else {
             modelCreator.createModels(json: nil, error: MercadoPagoError.api.invalidURL)
