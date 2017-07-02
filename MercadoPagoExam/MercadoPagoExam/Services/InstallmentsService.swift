@@ -20,7 +20,7 @@ final class InstallmentsService {
     }
     
     
-    func retriveInstallments(paymentMethodId: String, issuerId: String, amount: NSNumber) {
+    func retriveInstallments(paymentMethodId: String, issuerId: String?, amount: NSNumber) {
         
         let onError = { (error: Error) -> Void in
             self.delegate(nil, error)

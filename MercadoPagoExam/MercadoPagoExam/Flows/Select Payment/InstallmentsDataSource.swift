@@ -14,11 +14,17 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     
     var viewInformation: ViewInformation?
     
-    var installmentsPayerCosts: [PayerCosts]?
+    var models: [PayerCosts]?
     
     var service: InstallmentsService?
     
     var dataLoaded: ((Error?) -> Void)?
+    
+    var hasNoData: Bool {
+        get {
+            return models?.isEmpty ?? true
+        }
+    }
     
     override init() {
         super.init()
@@ -35,7 +41,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
         //TODO: revisar si poner waek a self
         
         //Asumo que siempre viene una installment
-        self.installmentsPayerCosts = installments?.first?.payerCosts
+        self.models = installments?.first?.payerCosts
         
         DispatchQueue.main.async {
             self.dataLoaded?(error)
@@ -43,7 +49,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath) {
-        guard let payerCosts = installmentsPayerCosts, index.row < payerCosts.count else {
+        guard let payerCosts = models, index.row < payerCosts.count else {
             return
         }
         payment?.installmentsPayerCost = payerCosts[index.row]
@@ -57,7 +63,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
         
         //TODO: asumo que siempre vienen un installment
         
-        let payerCost = installmentsPayerCosts?[indexPath.row]
+        let payerCost = models?[indexPath.row]
         cell.title.text = payerCost?.recommendedMessage
         cell.setSelected(false, animated: false)
         
@@ -67,15 +73,15 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     
     func startLoadingData(withInfoFrom payment: SelectedPayment?) {
         
-        guard let paymentId = payment?.method?.id, let issuerId = payment?.cardIssuer?.id, let amount = payment?.amount else {
+        guard let paymentId = payment?.method?.id, let amount = payment?.amount else {
             return
         }
         
-        service?.retriveInstallments(paymentMethodId: paymentId, issuerId: issuerId, amount: amount)
+        service?.retriveInstallments(paymentMethodId: paymentId, issuerId: payment?.cardIssuer?.id, amount: amount)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return installmentsPayerCosts?.count ?? 0
+        return models?.count ?? 0
     }
     
 }

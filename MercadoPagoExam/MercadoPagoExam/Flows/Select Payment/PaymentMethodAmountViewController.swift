@@ -91,8 +91,7 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
         return validAmount
     }
     
-    @IBAction func unwindToAmountScreen(segue: UIStoryboardSegue) {
-    }
+    @IBAction func unwindToAmountScreen(segue: UIStoryboardSegue) { }
     
     private func isValidAmount() -> Bool {
         

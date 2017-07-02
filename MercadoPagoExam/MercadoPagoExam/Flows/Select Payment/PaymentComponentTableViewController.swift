@@ -92,6 +92,10 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
             return
         }
         
+        if let dataSource = dataSource, dataSource.hasNoData, let identifier = viewInformation?.segueIdentifier {
+                performSegue(withIdentifier: identifier, sender: self)
+        }
+        
         self.tableView.reloadData()
     }
 

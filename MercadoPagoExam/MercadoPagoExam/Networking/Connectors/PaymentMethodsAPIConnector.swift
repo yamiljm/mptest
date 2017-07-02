@@ -50,7 +50,7 @@ final class PaymentMethodsAPIConnector: MercadoPagoAPIConnector {
         return networkExecutor.execute(request: urlRequest, completionHandler: modelCreator.createModels)
     }
     
-    func retriveInstallments(forPaymentMethodId paymentMethodId: String, andIssuerId issuerId: String, andAmount amount: NSNumber, withModelCreator modelCreator: ModelCreator<Installments>) {
+    func retriveInstallments(forPaymentMethodId paymentMethodId: String, andIssuerId issuerId: String?, andAmount amount: NSNumber, withModelCreator modelCreator: ModelCreator<Installments>) {
         
         guard let installmentsURL = createInstallmentsURL(forPaymentMethodId: paymentMethodId, andIssuerId: issuerId, withAmount: amount) else {
             modelCreator.createModels(json: nil, error: MercadoPagoError.api.invalidURL)
@@ -94,7 +94,7 @@ final class PaymentMethodsAPIConnector: MercadoPagoAPIConnector {
     }
     
     
-    private func createInstallmentsURL(forPaymentMethodId paymentMethodId: String, andIssuerId issuerId: String, withAmount amount: NSNumber) -> URL? {
+    private func createInstallmentsURL(forPaymentMethodId paymentMethodId: String, andIssuerId issuerId: String?, withAmount amount: NSNumber) -> URL? {
         
         guard let paymentMethodBaseURL = createPaymentMethodsBaseURL() else {
             //TODO: log error
@@ -104,9 +104,13 @@ final class PaymentMethodsAPIConnector: MercadoPagoAPIConnector {
         var urlComponents = URLComponents(url: paymentMethodBaseURL, resolvingAgainstBaseURL: true)
         
         let paymentMethodIdItem = URLQueryItem(name: Params.paymentMethodId, value: paymentMethodId)
-        let issuerIdItem = URLQueryItem(name: Params.issuerId, value: issuerId)
         let amountItem = URLQueryItem(name: Params.amount, value: amount.fractionDigits())
-        urlComponents?.queryItems?.append(contentsOf: [paymentMethodIdItem, issuerIdItem, amountItem])
+        urlComponents?.queryItems?.append(contentsOf: [paymentMethodIdItem, amountItem])
+        
+        if let issuerId = issuerId {
+            let issuerIdItem = URLQueryItem(name: Params.issuerId, value: issuerId)
+            urlComponents?.queryItems?.append(contentsOf: [issuerIdItem])
+        }
         
         return urlComponents?.url?.appendingPathComponent(Paths.installments)
     }

@@ -14,13 +14,19 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
 
     var viewInformation: ViewInformation?
     
-    var paymentMethods: [PaymentMethod]?
+    var models: [PaymentMethod]?
 
     var service: PaymentMethodsService?
     
     var dataLoaded: ((Error?) -> Void)?
     
     var selectedPaymentMethod: PaymentMethod?
+    
+    var hasNoData: Bool {
+        get {
+            return models?.isEmpty ?? true
+        }
+    }
     
     override init() {
         super.init()
@@ -35,7 +41,7 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
             return
         }
         //TODO: revisar si poner waek a self
-        self.paymentMethods = paymentMethods
+        self.models = paymentMethods
         
         DispatchQueue.main.async {
             self.dataLoaded?(error)
@@ -43,7 +49,7 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath) {
-        guard let paymentMethods = paymentMethods, index.row < paymentMethods.count else {
+        guard let paymentMethods = models, index.row < paymentMethods.count else {
             return
         }
         payment?.method = paymentMethods[index.row]
@@ -57,7 +63,7 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
         guard let cellIdentifier = viewInformation?.cellIdentifier, let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
             return UITableViewCell()
         }
-        let paymentMethod = paymentMethods?[indexPath.row]
+        let paymentMethod = models?[indexPath.row]
         cell.title.text = paymentMethod?.name
         cell.setSelected(false, animated: false)
 
@@ -68,7 +74,7 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return paymentMethods?.count ?? 0
+        return models?.count ?? 0
     }
     
 }
