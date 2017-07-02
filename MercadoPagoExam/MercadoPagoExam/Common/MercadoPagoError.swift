@@ -15,4 +15,8 @@ struct MercadoPagoError {
         case invalidAPIConnectorURL
         case invalidDataFromServer
     }
+    
+    enum service: Error {
+        case invalidParameters
+    }
 }

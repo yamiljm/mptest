@@ -12,13 +12,13 @@ import Nuke
 
 class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
 
-    var viewInformation: ViewInformation?
+    let viewInformation = TableViewInformation(cellNibName: "PaymentComponentCellWithImage", cellIdentifier: "PaymentComponentWithImageCell", segueIdentifier: "cardIssuer", tableTitle: "Seleccione un medio de pago")
     
     var models: [PaymentMethod]?
 
-    var service: PaymentMethodsService?
+//    var service: PaymentMethodsService?
     
-    var dataLoaded: ((Error?) -> Void)?
+//    var dataLoaded: ((Error?) -> Void)?
     
     var selectedPaymentMethod: PaymentMethod?
     
@@ -28,25 +28,20 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
         }
     }
     
-    override init() {
-        super.init()
-        self.service = PaymentMethodsService(delegate: updateModels)
-    }
-    
     //MARK: PaymentMethodComponentDataSource
     
-    func updateModels(_ paymentMethods: [PaymentMethod]?, error: Error?) {
-        if error != nil {
-            //TODO: manejar error
-            return
-        }
-        //TODO: revisar si poner waek a self
-        self.models = paymentMethods
-        
-        DispatchQueue.main.async {
-            self.dataLoaded?(error)
-        }
-    }
+//    func updateModels(_ paymentMethods: [PaymentMethod]?, error: Error?) {
+//        if error != nil {
+//            //TODO: manejar error
+//            return
+//        }
+//        //TODO: revisar si poner waek a self
+//        self.models = paymentMethods
+//        
+//        DispatchQueue.main.async {
+//            self.dataLoaded?(error)
+//        }
+//    }
     
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let paymentMethods = models, index.row < paymentMethods.count else {
@@ -55,12 +50,12 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
         payment?.method = paymentMethods[index.row]
     }
     
-    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
-        service?.retrivePaymentMethods(ofType: .creditCard)
-    }
+//    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
+//        service?.retrivePaymentMethods(ofType: .creditCard)
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellIdentifier = viewInformation?.cellIdentifier, let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewInformation.cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
             return UITableViewCell()
         }
         let paymentMethod = models?[indexPath.row]

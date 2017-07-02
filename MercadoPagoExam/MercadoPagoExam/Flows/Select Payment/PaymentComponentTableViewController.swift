@@ -13,23 +13,21 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
     var currentStep: PaymentStep?
     var selectedPayment: SelectedPaymentInfo?
     var dataSource: PaymentMethodComponentDataSource?
-    var viewInformation: ViewInformation?
+//    var viewInformation: ViewInformation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewInformation = ViewInformation.create(forStepType: currentStep?.type)
 
-        dataSource = currentStep?.dataSource
-        dataSource?.dataLoaded = dataLoaded
-        dataSource?.viewInformation = viewInformation
+//        dataSource = currentStep?.dataSource
+//        dataSource?.dataLoaded = dataLoaded
+//        dataSource?.viewInformation = viewInformation
         
-        dataSource?.startLoadingData(withInfoFrom: selectedPayment)
+//        dataSource?.startLoadingData(withInfoFrom: selectedPayment)
         
         tableView.delegate = self
         
         
-        if let nib = viewInformation?.cellNibName, let identifier = viewInformation?.cellIdentifier {
+        if let nib = dataSource?.viewInformation.cellNibName, let identifier = dataSource?.viewInformation.cellIdentifier {
             
             let uiNib = UINib(nibName: nib, bundle: Bundle.main)
             
@@ -57,7 +55,7 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return viewInformation?.tableTitle
+        return dataSource?.viewInformation.tableTitle
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -72,7 +70,7 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
             cell.accessoryType = .checkmark
         }
         
-        guard let segueIdentifier = viewInformation?.segueIdentifier else {
+        guard let segueIdentifier = dataSource?.viewInformation.segueIdentifier else {
             return
         }
         performSegue(withIdentifier: segueIdentifier, sender: self)
@@ -86,18 +84,18 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
     }
     
     
-    func dataLoaded(_ error: Error?) {
-        if error != nil {
-            //TODO: Mostrar error
-            return
-        }
-        
-        if let dataSource = dataSource, dataSource.hasNoData, let identifier = viewInformation?.segueIdentifier {
-                performSegue(withIdentifier: identifier, sender: self)
-        }
-        
-        self.tableView.reloadData()
-    }
+//    func dataLoaded(_ error: Error?) {
+//        if error != nil {
+//            //TODO: Mostrar error
+//            return
+//        }
+//        
+//        if let dataSource = dataSource, dataSource.hasNoData, let identifier = viewInformation?.segueIdentifier {
+//                performSegue(withIdentifier: identifier, sender: self)
+//        }
+//        
+//        self.tableView.reloadData()
+//    }
 
     
     // MARK: - Navigation

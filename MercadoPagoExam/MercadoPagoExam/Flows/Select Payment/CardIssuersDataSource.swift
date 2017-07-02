@@ -12,13 +12,13 @@ import Nuke
 
 class CardIssuersDataSource: NSObject, PaymentMethodComponentDataSource {
     
-    var viewInformation: ViewInformation?
+    let viewInformation = TableViewInformation(cellNibName: "PaymentComponentCellWithImage", cellIdentifier: "PaymentComponentWithImageCell", segueIdentifier: "installments", tableTitle: "Seleccione un emisor")
     
     var models: [CardIssuer]?
     
-    var service: CardIssuersService?
+//    var service: CardIssuersService?
     
-    var dataLoaded: ((Error?) -> Void)?
+//    var dataLoaded: ((Error?) -> Void)?
     
     var hasNoData: Bool {
         get {
@@ -26,24 +26,19 @@ class CardIssuersDataSource: NSObject, PaymentMethodComponentDataSource {
         }
     }
     
-    override init() {
-        super.init()
-        self.service = CardIssuersService(delegate: updateModels)
-    }
-    
     //MARK: PaymentMethodComponentDataSource
     
-    func updateModels(_ cardIssuers: [CardIssuer]?, error: Error?) {
-        if error != nil {
-            //TODO: manejar error
-            return
-        }
-        //TODO: revisar si poner waek a self
-        self.models = cardIssuers
-        DispatchQueue.main.async {
-            self.dataLoaded?(error)
-        }
-    }
+//    func updateModels(_ cardIssuers: [CardIssuer]?, error: Error?) {
+//        if error != nil {
+//            //TODO: manejar error
+//            return
+//        }
+//        //TODO: revisar si poner waek a self
+//        self.models = cardIssuers
+//        DispatchQueue.main.async {
+//            self.dataLoaded?(error)
+//        }
+//    }
     
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let cardIssuers = models, index.row < cardIssuers.count else {
@@ -53,7 +48,7 @@ class CardIssuersDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cellIdentifier = viewInformation?.cellIdentifier, let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewInformation.cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
             return UITableViewCell()
         }
         let cardIssuer = models?[indexPath.row]
@@ -67,14 +62,14 @@ class CardIssuersDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     
-    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
-        
-        guard let id = payment?.method?.id else {
-            return
-        }
-        
-        service?.retriveCardIssuers(paymentMethodId: id)
-    }
+//    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
+//        
+//        guard let id = payment?.method?.id else {
+//            return
+//        }
+//        
+//        service?.retriveCardIssuers(paymentMethodId: id)
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models?.count ?? 0

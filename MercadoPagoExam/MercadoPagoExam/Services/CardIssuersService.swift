@@ -12,22 +12,15 @@ final class CardIssuersService {
     
     let apiConnector = PaymentMethodsAPIConnector()
     
-    //TODO: hacerlo weak
-    var delegate: (_: [CardIssuer]?, _: Error?) -> Void
-    
-    init(delegate: @escaping (_: [CardIssuer]?, _: Error?) -> Void) {
-        self.delegate = delegate
-    }
-    
-    func retriveCardIssuers(paymentMethodId: String) {
+    func retriveCardIssuers(paymentMethodId: String, completion: @escaping (_ models: [CardIssuer]?, _ error: Error?) -> Void) {
         
         let onError = { (error: Error) -> Void in
-            self.delegate(nil, error)
+            completion(nil, error)
         }
         
         let onSucces = { (models: [CardIssuer]?) -> Void in
             //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
-            self.delegate(models, nil)
+            completion(models, nil)
         }
         
         let cardIssuerModelCreator = ModelCreator<CardIssuer>(onSucces: onSucces, onError: onError)

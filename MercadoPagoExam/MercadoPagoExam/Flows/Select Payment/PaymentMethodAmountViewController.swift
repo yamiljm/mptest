@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, PaymentStepable {
+class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, PaymentScreen {
 
     @IBOutlet weak var amountField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -18,9 +18,10 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
     private var formatter: NumberFormatter?
     private let minimumAmount = NSNumber(value: 0)
     
-    var selectedPayment: SelectedPaymentInfo? = SelectedPaymentInfo()
-    var currentStep: PaymentStep? = PaymentStepFactory.create(.amount)
-    
+    var selectedPaymentInfo: SelectedPaymentInfo? = SelectedPaymentInfo()
+    var currentStep: PaymentStep?// = PaymentStepFactory.create(.amount)
+    var dataSource: PaymentMethodComponentDataSource?
+    weak var flowManager: SelectPaymentFlowManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,7 +44,7 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        guard let selectedPayment = selectedPayment else {
+        guard let selectedPayment = selectedPaymentInfo else {
             return
         }
         
@@ -68,14 +69,14 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
         // Pass the selected object to the new view controller.
         
         if let amount = amountField.text {
-            selectedPayment?.amount = formatter?.number(from: amount)
+            selectedPaymentInfo?.amount = formatter?.number(from: amount)
         }
         
         if segue.destination.isKind(of: PaymentComponentTableViewController.self) {
             let destination = segue.destination as? PaymentComponentTableViewController
             if let nextStep = PaymentStepOrderManager.stepAfter(step: currentStep) {
                 destination?.currentStep = nextStep
-                destination?.selectedPayment = selectedPayment
+                destination?.selectedPayment = selectedPaymentInfo
             }
         }
     }

@@ -12,13 +12,14 @@ import Nuke
 
 class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     
-    var viewInformation: ViewInformation?
+    let viewInformation = TableViewInformation(cellNibName: "PaymentComponentCellWithoutImage", cellIdentifier: "PaymentComponentCellWithoutImage", segueIdentifier: nil, tableTitle: "Seleccione cantidad de cuotas")
+
     
     var models: [PayerCosts]?
     
-    var service: InstallmentsService?
+//    var service: InstallmentsService?
     
-    var dataLoaded: ((Error?) -> Void)?
+//    var dataLoaded: ((Error?) -> Void)?
     
     var hasNoData: Bool {
         get {
@@ -26,28 +27,23 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
         }
     }
     
-    override init() {
-        super.init()
-        self.service = InstallmentsService(delegate: updateModels)
-    }
-    
     //MARK: PaymentMethodComponentDataSource
     
-    func updateModels(_ installments: [Installment]?, error: Error?) {
-        if error != nil {
-            //TODO: manejar error
-            return
-        }
-        //TODO: revisar si poner waek a self
-        
-        //Asumo que siempre viene una installment
-        self.models = installments?.first?.payerCosts
-        
-        DispatchQueue.main.async {
-            self.dataLoaded?(error)
-        }
-    }
-    
+//    func updateModels(_ installments: [Installment]?, error: Error?) {
+//        if error != nil {
+//            //TODO: manejar error
+//            return
+//        }
+//        //TODO: revisar si poner waek a self
+//        
+//        //Asumo que siempre viene una installment
+//        self.models = installments?.first?.payerCosts
+//        
+//        DispatchQueue.main.async {
+//            self.dataLoaded?(error)
+//        }
+//    }
+//    
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let payerCosts = models, index.row < payerCosts.count else {
             return
@@ -57,7 +53,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cellIdentifier = viewInformation?.cellIdentifier, let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? PaymentComponentCellWithoutImage else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: viewInformation.cellIdentifier, for: indexPath) as? PaymentComponentCellWithoutImage else {
             return UITableViewCell()
         }
         
@@ -71,14 +67,14 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     
-    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
-        
-        guard let paymentId = payment?.method?.id, let amount = payment?.amount else {
-            return
-        }
-        
-        service?.retriveInstallments(paymentMethodId: paymentId, issuerId: payment?.cardIssuer?.id, amount: amount)
-    }
+//    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
+//        
+//        guard let paymentId = payment?.method?.id, let amount = payment?.amount else {
+//            return
+//        }
+//        
+//        service?.retriveInstallments(paymentMethodId: paymentId, issuerId: payment?.cardIssuer?.id, amount: amount)
+//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models?.count ?? 0

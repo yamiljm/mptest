@@ -12,23 +12,15 @@ final class InstallmentsService {
     
     let apiConnector = PaymentMethodsAPIConnector()
     
-    //TODO: hacerlo weak
-    var delegate: (_: [Installment]?, _: Error?) -> Void
-    
-    init(delegate: @escaping (_: [Installment]?, _: Error?) -> Void) {
-        self.delegate = delegate
-    }
-    
-    
-    func retriveInstallments(paymentMethodId: String, issuerId: String?, amount: NSNumber) {
+    func retriveInstallments(paymentMethodId: String, issuerId: String?, amount: NSNumber, completion: @escaping (_ models: [Installment]?, _ error: Error?) -> Void) {
         
         let onError = { (error: Error) -> Void in
-            self.delegate(nil, error)
+            completion(nil, error)
         }
         
         let onSucces = { (models: [Installment]?) -> Void in
             //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
-            self.delegate(models, nil)
+            completion(models, nil)
         }
         
         let installmentsModelCreator = ModelCreator<Installment>(onSucces: onSucces, onError: onError)

@@ -13,28 +13,51 @@ final class PaymentMethodsService {
     let apiConnector = PaymentMethodsAPIConnector()
     
     //TODO: hacerlo weak
-    var delegate: (_: [PaymentMethod]?, _: Error?) -> Void
+//    var delegate: (_: [PaymentMethod]?, _: Error?) -> Void
     
-    init(delegate: @escaping (_: [PaymentMethod]?, _: Error?) -> Void) {
-        self.delegate = delegate
-    }
+//    init(completion: @escaping (_: [PaymentMethod]?, _: Error?) -> Void) {
+//        self.delegate = delegate
+//    }
 
-    func retrivePaymentMethods(ofType type: PaymentType?=nil) {
+//    func retrivePaymentMethods(ofType type: PaymentType?=nil) {
+//        
+//        let onError = { (error: Error) -> Void in
+//            self.delegate(nil, error)
+//        }
+//
+//        let onSucces = { (models: [PaymentMethod]?) -> Void in
+//            //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
+//            if let type = type {
+//                let filteredPaymentMethods = models?.filter {$0.paymentTypeId == type}
+//                self.delegate(filteredPaymentMethods, nil)
+//            } else {
+//                self.delegate(models, nil)
+//            }
+//        }
+//
+//        let paymentMethodModelCreator = ModelCreator<PaymentMethod>(onSucces: onSucces, onError: onError)
+//        
+//        apiConnector.retrievePaymentMethods(withModelCreator: paymentMethodModelCreator)
+//    }
+    
+    func retrivePaymentMethods(ofType type: PaymentType?=nil, completion: @escaping (_ models: [PaymentMethod]?, _ error: Error?) -> Void) {
         
         let onError = { (error: Error) -> Void in
-            self.delegate(nil, error)
+            completion(nil, error)
         }
-
+        
         let onSucces = { (models: [PaymentMethod]?) -> Void in
             //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
             if let type = type {
                 let filteredPaymentMethods = models?.filter {$0.paymentTypeId == type}
-                self.delegate(filteredPaymentMethods, nil)
+                completion(filteredPaymentMethods, nil)
+//                self.delegate(filteredPaymentMethods, nil)
             } else {
-                self.delegate(models, nil)
+                completion(models, nil)
+//                self.delegate(models, nil)
             }
         }
-
+        
         let paymentMethodModelCreator = ModelCreator<PaymentMethod>(onSucces: onSucces, onError: onError)
         
         apiConnector.retrievePaymentMethods(withModelCreator: paymentMethodModelCreator)

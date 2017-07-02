@@ -10,6 +10,7 @@ import Foundation
 
 final class SelectedPaymentInfo {
     
+    var paymentType: PaymentType = .creditCard
     var amount: NSNumber?
     var method: PaymentMethod?
     var cardIssuer: CardIssuer?
