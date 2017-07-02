@@ -34,7 +34,9 @@ class CardIssuersDataSource: NSObject, PaymentMethodComponentDataSource {
         }
         //TODO: revisar si poner waek a self
         self.cardIssuers = cardIssuers
-        self.dataLoaded?(error)
+        DispatchQueue.main.async {
+            self.dataLoaded?(error)
+        }
     }
     
     func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath) {

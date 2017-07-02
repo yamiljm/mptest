@@ -91,9 +91,8 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
             //TODO: Mostrar error
             return
         }
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+        
+        self.tableView.reloadData()
     }
 
     

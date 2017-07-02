@@ -36,7 +36,10 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
         
         //Asumo que siempre viene una installment
         self.installmentsPayerCosts = installments?.first?.payerCosts
-        self.dataLoaded?(error)
+        
+        DispatchQueue.main.async {
+            self.dataLoaded?(error)
+        }
     }
     
     func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath) {
