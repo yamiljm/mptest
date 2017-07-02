@@ -14,7 +14,7 @@ class InstallmentsViewController: UIViewController, PaymentStepable {
     
     @IBOutlet weak var tableViewContainer: UIView!
     
-    var selectedPayment: SelectedPayment?
+    var selectedPayment: SelectedPaymentInfo?
     var currentStep: PaymentStep?
 
     

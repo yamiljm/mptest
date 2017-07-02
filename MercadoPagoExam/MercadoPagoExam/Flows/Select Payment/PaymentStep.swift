@@ -54,9 +54,9 @@ struct PaymentStep {
     
     let type: PaymentStepType
     let dataSource: PaymentMethodComponentDataSource?
-    let selectedPayment: SelectedPayment?
+    let selectedPayment: SelectedPaymentInfo?
     
-    init(ofType type: PaymentStepType, dataSource: PaymentMethodComponentDataSource?=nil, selectedPayment: SelectedPayment?=nil) {
+    init(ofType type: PaymentStepType, dataSource: PaymentMethodComponentDataSource?=nil, selectedPayment: SelectedPaymentInfo?=nil) {
         self.type = type
         self.dataSource = dataSource
         self.selectedPayment = selectedPayment

@@ -48,7 +48,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
         }
     }
     
-    func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath) {
+    func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let payerCosts = models, index.row < payerCosts.count else {
             return
         }
@@ -71,7 +71,7 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     }
     
     
-    func startLoadingData(withInfoFrom payment: SelectedPayment?) {
+    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
         
         guard let paymentId = payment?.method?.id, let amount = payment?.amount else {
             return

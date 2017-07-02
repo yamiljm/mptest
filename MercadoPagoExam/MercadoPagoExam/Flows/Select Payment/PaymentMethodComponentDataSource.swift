@@ -17,9 +17,9 @@ protocol PaymentMethodComponentDataSource: UITableViewDataSource, UITableViewDel
     
     var hasNoData: Bool {get}
     
-    func startLoadingData(withInfoFrom: SelectedPayment?)
+    func startLoadingData(withInfoFrom: SelectedPaymentInfo?)
     
-    func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath)
+    func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath)
     
 }
 

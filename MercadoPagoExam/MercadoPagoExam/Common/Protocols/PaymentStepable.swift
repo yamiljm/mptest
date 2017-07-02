@@ -11,6 +11,6 @@ import Foundation
 protocol PaymentStepable {
     
     var currentStep: PaymentStep? {get set}
-    var selectedPayment: SelectedPayment? {get set}
+    var selectedPayment: SelectedPaymentInfo? {get set}
 
 }

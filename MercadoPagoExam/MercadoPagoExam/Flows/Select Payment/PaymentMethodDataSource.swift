@@ -48,14 +48,14 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
         }
     }
     
-    func completePaymentInfo(intoPayment payment: SelectedPayment?, withIndexPath index: IndexPath) {
+    func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let paymentMethods = models, index.row < paymentMethods.count else {
             return
         }
         payment?.method = paymentMethods[index.row]
     }
     
-    func startLoadingData(withInfoFrom payment: SelectedPayment?) {
+    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
         service?.retrivePaymentMethods(ofType: .creditCard)
     }
     

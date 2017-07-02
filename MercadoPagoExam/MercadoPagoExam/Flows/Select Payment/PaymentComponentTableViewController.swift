@@ -11,7 +11,7 @@ import UIKit
 class PaymentComponentTableViewController: UITableViewController, PaymentStepable {
 
     var currentStep: PaymentStep?
-    var selectedPayment: SelectedPayment?
+    var selectedPayment: SelectedPaymentInfo?
     var dataSource: PaymentMethodComponentDataSource?
     var viewInformation: ViewInformation?
     

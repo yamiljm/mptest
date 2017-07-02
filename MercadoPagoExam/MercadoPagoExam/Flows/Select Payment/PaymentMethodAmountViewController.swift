@@ -18,7 +18,7 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
     private var formatter: NumberFormatter?
     private let minimumAmount = NSNumber(value: 0)
     
-    var selectedPayment: SelectedPayment? = SelectedPayment()
+    var selectedPayment: SelectedPaymentInfo? = SelectedPaymentInfo()
     var currentStep: PaymentStep? = PaymentStepFactory.create(.amount)
     
     
@@ -175,7 +175,7 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
         }
     }
     
-    func showPaymentInfoMessage(_ selectedPayment: SelectedPayment) {
+    func showPaymentInfoMessage(_ selectedPayment: SelectedPaymentInfo) {
         
         //TODO: internacionalizar title
         
@@ -211,7 +211,7 @@ fileprivate extension String {
 }
 
 
-fileprivate extension SelectedPayment {
+fileprivate extension SelectedPaymentInfo {
     
     var fontSize: CGFloat {
         get {

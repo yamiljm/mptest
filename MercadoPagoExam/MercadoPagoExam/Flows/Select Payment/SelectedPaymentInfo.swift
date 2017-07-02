@@ -8,7 +8,7 @@
 
 import Foundation
 
-final class SelectedPayment {
+final class SelectedPaymentInfo {
     
     var amount: NSNumber?
     var method: PaymentMethod?
