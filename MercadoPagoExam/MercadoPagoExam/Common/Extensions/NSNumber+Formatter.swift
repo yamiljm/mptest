@@ -8,15 +8,15 @@
 
 import Foundation
 
+protocol DecimalDescriptable {
+    func fractionDigits(min: Int, max: Int, roundingMode: NumberFormatter.RoundingMode) -> String
+}
 
 extension Formatter {
     static let number = NumberFormatter()
 }
 
-extension NSNumber {
-    
-    //TODO: sacar a constantes
-    
+extension DecimalDescriptable {
     func fractionDigits(min: Int = 2, max: Int = 2, roundingMode: NumberFormatter.RoundingMode = .up) -> String {
         Formatter.number.minimumFractionDigits = min
         Formatter.number.maximumFractionDigits = max
@@ -24,3 +24,7 @@ extension NSNumber {
         return Formatter.number.string(for: self) ?? ""
     }
 }
+
+extension NSNumber : DecimalDescriptable {}
+
+extension Double: DecimalDescriptable {}
