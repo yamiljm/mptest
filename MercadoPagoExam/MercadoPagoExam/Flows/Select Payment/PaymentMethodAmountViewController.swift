@@ -56,7 +56,7 @@ class PaymentMethodAmountViewController: UIViewController, UITextFieldDelegate, 
             amountField.becomeFirstResponder()
         }
         
-        if selectedPayment.isComplete() {
+        if selectedPayment.isComplete {
             amountField.text = formatter?.string(from: 0)
             flowManager?.presentPaymentInfoMessage(selectedPayment)
         }

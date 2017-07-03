@@ -15,12 +15,8 @@ final class SelectedPaymentInfo {
     var method: PaymentMethod?
     var cardIssuer: CardIssuer?
     var installmentsPayerCost: PayerCosts?
-    
-    func isComplete() -> Bool {
-        //Asumo esto como una posible regla de negocio para este ejercicio
-        return amount != nil && method != nil  && installmentsPayerCost != nil
-    }
-    
+    var isComplete: Bool = false
+
     func hasAnAmount() -> Bool {
         return amount != nil 
     }

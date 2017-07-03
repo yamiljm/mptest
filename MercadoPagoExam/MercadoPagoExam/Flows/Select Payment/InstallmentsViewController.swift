@@ -14,7 +14,7 @@ class InstallmentsViewController: UIViewController, PaymentScreen {
     
     @IBOutlet weak var tableViewContainer: UIView!
     
-    var selectedPaymentInfo: SelectedPaymentInfo?
+    weak var selectedPaymentInfo: SelectedPaymentInfo?
     var currentStep: PaymentStep?
     var dataSource: PaymentMethodComponentDataSource?
     weak var flowManager: SelectPaymentFlowManager?
@@ -36,6 +36,7 @@ class InstallmentsViewController: UIViewController, PaymentScreen {
     @IBAction func finishButtonPressed(_ sender: UIButton) {
         
         if selectedPaymentInfo?.installmentsPayerCost != nil {
+            selectedPaymentInfo?.isComplete = true
             flowManager?.userDidCompleteInfo(forStep: currentStep, withPaymentInfo: selectedPaymentInfo)
         }
     }
