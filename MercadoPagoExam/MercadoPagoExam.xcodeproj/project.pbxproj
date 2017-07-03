@@ -33,6 +33,7 @@
 		C6389A0B1F0305200021645C /* CardIssuersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6389A0A1F0305200021645C /* CardIssuersService.swift */; };
 		C6389A201F04396F0021645C /* PaymentComponentWithImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6389A1F1F04396F0021645C /* PaymentComponentWithImageCell.swift */; };
 		C638E8841F09FB3B0020D7A1 /* SelectedPaymentInfo+AttributedDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638E8831F09FB3B0020D7A1 /* SelectedPaymentInfo+AttributedDescription.swift */; };
+		C638E8861F0A101A0020D7A1 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C638E8851F0A101A0020D7A1 /* ProgressView.swift */; };
 		C639FF251F09B25C00EBF858 /* PaymentStoryboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639FF241F09B25C00EBF858 /* PaymentStoryboardHelper.swift */; };
 		C639FF271F09C9E900EBF858 /* PaymentNavigationControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C639FF261F09C9E900EBF858 /* PaymentNavigationControler.swift */; };
 		C63C8C041EF6D5FE000A76D5 /* PaymentMethodsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */; };
@@ -118,6 +119,7 @@
 		C6389A0A1F0305200021645C /* CardIssuersService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardIssuersService.swift; sourceTree = "<group>"; };
 		C6389A1F1F04396F0021645C /* PaymentComponentWithImageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentComponentWithImageCell.swift; sourceTree = "<group>"; };
 		C638E8831F09FB3B0020D7A1 /* SelectedPaymentInfo+AttributedDescription.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectedPaymentInfo+AttributedDescription.swift"; sourceTree = "<group>"; };
+		C638E8851F0A101A0020D7A1 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		C639FF241F09B25C00EBF858 /* PaymentStoryboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentStoryboardHelper.swift; sourceTree = "<group>"; };
 		C639FF261F09C9E900EBF858 /* PaymentNavigationControler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentNavigationControler.swift; sourceTree = "<group>"; };
 		C63C8C031EF6D5FE000A76D5 /* PaymentMethodsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentMethodsService.swift; sourceTree = "<group>"; };
@@ -309,6 +311,7 @@
 				C63C8C111EF8321F000A76D5 /* Environment.swift */,
 				C63C8C1B1EF88144000A76D5 /* MercadoPagoError.swift */,
 				C63899F41EFE28160021645C /* AppConfiguration.swift */,
+				C638E8851F0A101A0020D7A1 /* ProgressView.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				C63C8C231EF8925A000A76D5 /* ConsoleLogger.swift in Sources */,
 				C62CF74A1EFC79D100091503 /* Installment.swift in Sources */,
 				C62CF74C1EFC7B2400091503 /* PayerCosts.swift in Sources */,
+				C638E8861F0A101A0020D7A1 /* ProgressView.swift in Sources */,
 				C62CF7531EFC84CE00091503 /* PaymentMethodsAPIConnector.swift in Sources */,
 				C63C8C1A1EF86EED000A76D5 /* URLSessionNetworkExecutor.swift in Sources */,
 				C639FF251F09B25C00EBF858 /* PaymentStoryboardHelper.swift in Sources */,

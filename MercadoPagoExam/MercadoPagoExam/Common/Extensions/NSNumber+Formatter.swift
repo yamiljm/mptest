@@ -1,4 +1,4 @@
-4//
+//
 //  Double+Formatter.swift
 //  MercadoPagoExam
 //

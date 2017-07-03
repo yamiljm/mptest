@@ -18,8 +18,6 @@ class SelectPaymentFlowManager: StepDelegate {
     
     private var stepsManager = PaymentStepOrderManager()
     
-    private var loadingScreenIsActive = false
-        
     func start() {
         var step = stepsManager.first()
         
@@ -49,9 +47,7 @@ class SelectPaymentFlowManager: StepDelegate {
     
     private func present(step: PaymentStep, withModels models: [Any]?=nil){
         
-        if loadingScreenIsActive {
-            dismissLoadingScreen()
-        }
+        dismissLoadingScreen()
         
         switch step.type {
         case .amount:
@@ -163,8 +159,6 @@ class SelectPaymentFlowManager: StepDelegate {
         alertController.setValue(selectedPayment.attributedDescription(), forKey: "attributedMessage")
         
         navigationController?.present(alertController, animated: true, completion: nil)
-        
-        selectedPaymentInfo = SelectedPaymentInfo()
     }
     
     func stepWillRetrieveData() {
@@ -172,21 +166,19 @@ class SelectPaymentFlowManager: StepDelegate {
     }
     
     func showLoadingScreen() {
-        loadingScreenIsActive = true
+        guard let view = navigationController?.topViewController?.view else {
+            return
+        }
         
-        //TODO: completar
-        
+        ProgressView.shared.start(intoView: view)
     }
     
     func dismissLoadingScreen() {
-        
-        //TODO: completar
-        loadingScreenIsActive = false
-        
+        ProgressView.shared.stop()
     }
     
     func showErrorScreen(_ error: Error?=nil) {
         
-        
+        //TODO completar
     }
 }
