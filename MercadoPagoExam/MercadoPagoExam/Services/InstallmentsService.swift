@@ -12,7 +12,7 @@ final class InstallmentsService {
     
     let apiConnector = PaymentMethodsAPIConnector()
     
-    func retriveInstallments(paymentMethodId: String, issuerId: String?, amount: NSNumber, completion: @escaping (_ models: [Installment]?, _ error: Error?) -> Void) {
+    func retriveInstallments(paymentMethodId: String, issuerId: String?, amount: Double, completion: @escaping (_ models: [Installment]?, _ error: Error?) -> Void) {
         
         let onError = { (error: Error) -> Void in
             completion(nil, error)

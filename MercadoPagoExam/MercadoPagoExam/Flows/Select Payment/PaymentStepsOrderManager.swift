@@ -12,6 +12,9 @@ struct PaymentStepOrderManager {
     
     let defaultStep = PaymentStepFactory.create(.amount)
     
+    
+    //Se pasa SelectedPaymentInfo para que en base al contexto se puedan definir otras reglas
+    //para saber cuál será el próximo paso.
     func nextStep(afterStep step: PaymentStep?, withCurrentPaymentInfo paymentInfo: SelectedPaymentInfo?=nil) -> PaymentStep {
         
         guard let step = step else {

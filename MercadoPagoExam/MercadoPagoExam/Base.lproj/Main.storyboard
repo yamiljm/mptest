@@ -23,20 +23,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese un monto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byo-tV-GJL">
-                                <rect key="frame" x="16" y="28" width="149" height="23"/>
+                                <rect key="frame" x="16" y="28" width="210" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2w-aX-Yhr">
-                                <rect key="frame" x="61" y="73" width="253" height="48"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="Vpu-Iy-tXa"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="decimalPad"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEY-bh-VRy">
                                 <rect key="frame" x="0.0" y="603" width="375" height="64"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.61960784310000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -50,29 +41,29 @@
                                     <action selector="continueButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RsN-fK-Sgv"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nb-Mf-6Xb">
-                                <rect key="frame" x="61" y="145" width="253" height="16"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyp-iQ-vm2" userLabel="Amount container">
+                                <rect key="frame" x="36" y="92" width="303" height="65"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="253" id="WJ8-Pj-qvu"/>
+                                    <constraint firstAttribute="height" constant="65" id="SEg-BK-plj"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <color key="textColor" red="1" green="0.018539993604963168" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <connections>
+                                    <segue destination="LV5-Hx-wPt" kind="embed" identifier="amountIdentifier" id="c1S-BV-rGC"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="0Nb-Mf-6Xb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="09q-Zv-VqO"/>
-                            <constraint firstItem="byo-tV-GJL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="FKX-Kh-hM4"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VEY-bh-VRy" secondAttribute="bottom" id="KPY-mi-6Q3"/>
-                            <constraint firstItem="i2w-aX-Yhr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="KYH-MW-brG"/>
+                            <constraint firstItem="byo-tV-GJL" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="3Qo-OF-fQ8"/>
+                            <constraint firstItem="gyp-iQ-vm2" firstAttribute="leading" secondItem="byo-tV-GJL" secondAttribute="trailing" constant="-190" id="5bu-T4-xxy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gyp-iQ-vm2" secondAttribute="trailing" constant="20" id="FVh-Y8-r7I"/>
+                            <constraint firstItem="gyp-iQ-vm2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="N6g-uG-yQD"/>
                             <constraint firstAttribute="trailing" secondItem="VEY-bh-VRy" secondAttribute="trailing" id="T0K-jd-U4I"/>
-                            <constraint firstItem="i2w-aX-Yhr" firstAttribute="top" secondItem="byo-tV-GJL" secondAttribute="bottom" constant="22" id="VHE-j3-INg"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="byo-tV-GJL" secondAttribute="leading" id="b7a-GK-o9P"/>
-                            <constraint firstItem="0Nb-Mf-6Xb" firstAttribute="top" secondItem="i2w-aX-Yhr" secondAttribute="bottom" constant="24" id="hP4-4h-cuQ"/>
                             <constraint firstItem="VEY-bh-VRy" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jYk-I7-9gq"/>
-                            <constraint firstItem="i2w-aX-Yhr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="rIP-6j-aDp"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="byo-tV-GJL" secondAttribute="leading" id="kf5-B0-FgT"/>
+                            <constraint firstItem="gyp-iQ-vm2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uiW-Vu-C89"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="VEY-bh-VRy" secondAttribute="bottom" id="vgi-zs-j6x"/>
+                            <constraint firstItem="gyp-iQ-vm2" firstAttribute="top" secondItem="byo-tV-GJL" secondAttribute="bottom" constant="41" id="xpu-PS-bgB"/>
                         </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="bP4-75-MPc" appends="YES" id="v7I-U5-s52"/>
@@ -80,10 +71,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Dxs-sE-gM5"/>
                     <connections>
-                        <outlet property="amountField" destination="i2w-aX-Yhr" id="23N-T5-bxD"/>
+                        <outlet property="amountContainer" destination="gyp-iQ-vm2" id="32H-QP-1ha"/>
                         <outlet property="continueButton" destination="VEY-bh-VRy" id="dXo-Sp-Qhk"/>
-                        <outlet property="errorLabel" destination="0Nb-Mf-6Xb" id="MXk-sn-xyl"/>
-                        <outlet property="keyboardHeightLayoutConstraint" destination="KPY-mi-6Q3" id="4LN-cz-Bgl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -241,6 +230,20 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03R-B4-guT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="-570.76461769115451"/>
+        </scene>
+        <!--Numeric Text Field View Controller-->
+        <scene sceneID="Yyp-d9-kpO">
+            <objects>
+                <viewController id="LV5-Hx-wPt" customClass="NumericTextFieldViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="iho-eQ-caG">
+                        <rect key="frame" x="0.0" y="0.0" width="303" height="65"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4AF-zC-GDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1076" y="620"/>
         </scene>
     </scenes>
 </document>
