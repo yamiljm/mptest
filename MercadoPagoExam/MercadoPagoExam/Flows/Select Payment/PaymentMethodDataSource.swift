@@ -16,32 +16,15 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
     
     var models: [PaymentMethod]?
 
-//    var service: PaymentMethodsService?
-    
-//    var dataLoaded: ((Error?) -> Void)?
-    
     var selectedPaymentMethod: PaymentMethod?
     
-    var hasNoData: Bool {
-        get {
-            return models?.isEmpty ?? true
-        }
+    let useButton = false
+    
+    required init(withModels models: [Any]?) {
+        self.models = models as? [PaymentMethod]
     }
     
     //MARK: PaymentMethodComponentDataSource
-    
-//    func updateModels(_ paymentMethods: [PaymentMethod]?, error: Error?) {
-//        if error != nil {
-//            //TODO: manejar error
-//            return
-//        }
-//        //TODO: revisar si poner waek a self
-//        self.models = paymentMethods
-//        
-//        DispatchQueue.main.async {
-//            self.dataLoaded?(error)
-//        }
-//    }
     
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let paymentMethods = models, index.row < paymentMethods.count else {
@@ -49,10 +32,6 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
         }
         payment?.method = paymentMethods[index.row]
     }
-    
-//    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
-//        service?.retrivePaymentMethods(ofType: .creditCard)
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: viewInformation.cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
@@ -71,5 +50,4 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models?.count ?? 0
     }
-    
 }

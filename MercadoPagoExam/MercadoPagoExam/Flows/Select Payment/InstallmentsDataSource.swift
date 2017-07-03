@@ -17,33 +17,17 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
     
     var models: [PayerCosts]?
     
-//    var service: InstallmentsService?
+    let useButton = true
     
-//    var dataLoaded: ((Error?) -> Void)?
-    
-    var hasNoData: Bool {
-        get {
-            return models?.isEmpty ?? true
-        }
+    required init(withModels models: [Any]?) {
+        
+        //Asumo que siempre viene un installment
+        let installment = models?.first as? Installment
+        self.models = installment?.payerCosts
     }
     
     //MARK: PaymentMethodComponentDataSource
-    
-//    func updateModels(_ installments: [Installment]?, error: Error?) {
-//        if error != nil {
-//            //TODO: manejar error
-//            return
-//        }
-//        //TODO: revisar si poner waek a self
-//        
-//        //Asumo que siempre viene una installment
-//        self.models = installments?.first?.payerCosts
-//        
-//        DispatchQueue.main.async {
-//            self.dataLoaded?(error)
-//        }
-//    }
-//    
+
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let payerCosts = models, index.row < payerCosts.count else {
             return
@@ -57,24 +41,12 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
             return UITableViewCell()
         }
         
-        //TODO: asumo que siempre vienen un installment
-        
         let payerCost = models?[indexPath.row]
         cell.title.text = payerCost?.recommendedMessage
         cell.setSelected(false, animated: false)
         
         return cell
     }
-    
-    
-//    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
-//        
-//        guard let paymentId = payment?.method?.id, let amount = payment?.amount else {
-//            return
-//        }
-//        
-//        service?.retriveInstallments(paymentMethodId: paymentId, issuerId: payment?.cardIssuer?.id, amount: amount)
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models?.count ?? 0

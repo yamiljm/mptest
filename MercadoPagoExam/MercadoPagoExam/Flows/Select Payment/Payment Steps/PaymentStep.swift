@@ -23,6 +23,8 @@ protocol PaymentStep {
     
     var needExternalData: Bool {get}
     
+    var isFinal: Bool {get set}
+    
     func execute(withCurrentPaymentInfo: SelectedPaymentInfo?)
     
 }

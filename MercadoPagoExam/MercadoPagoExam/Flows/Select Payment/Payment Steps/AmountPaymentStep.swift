@@ -17,6 +17,7 @@ class AmountPaymentStep: PaymentStep {
     var models: [Any]?
     var delegate: StepDelegate?
     var shouldBeOmitted: Bool = false
+    var isFinal = false
     
     func execute(withCurrentPaymentInfo paymentInfo: SelectedPaymentInfo?) {
         return

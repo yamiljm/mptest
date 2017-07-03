@@ -8,34 +8,23 @@
 
 import UIKit
 
-class PaymentComponentTableViewController: UITableViewController, PaymentStepable {
+class PaymentComponentTableViewController: UITableViewController, PaymentScreen {
 
+    var selectedPaymentInfo: SelectedPaymentInfo?
     var currentStep: PaymentStep?
-    var selectedPayment: SelectedPaymentInfo?
     var dataSource: PaymentMethodComponentDataSource?
-//    var viewInformation: ViewInformation?
+    weak var flowManager: SelectPaymentFlowManager?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        dataSource = currentStep?.dataSource
-//        dataSource?.dataLoaded = dataLoaded
-//        dataSource?.viewInformation = viewInformation
-        
-//        dataSource?.startLoadingData(withInfoFrom: selectedPayment)
-        
         tableView.delegate = self
         
-        
         if let nib = dataSource?.viewInformation.cellNibName, let identifier = dataSource?.viewInformation.cellIdentifier {
-            
             let uiNib = UINib(nibName: nib, bundle: Bundle.main)
-            
             self.tableView?.register(uiNib, forCellReuseIdentifier: identifier)
         }
         
         self.clearsSelectionOnViewWillAppear = false
-
     }
 
     // MARK: - Table view data source
@@ -59,21 +48,21 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        //TODO: sacar a constantes
         return CGFloat(48.0)
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        dataSource?.completePaymentInfo(intoPayment: selectedPayment, withIndexPath: indexPath)
+        dataSource?.completePaymentInfo(intoPayment: selectedPaymentInfo, withIndexPath: indexPath)
         
         if let cell = tableView.cellForRow(at: indexPath) as? PaymentComponentCellWithoutImage {
             cell.accessoryType = .checkmark
         }
         
-        guard let segueIdentifier = dataSource?.viewInformation.segueIdentifier else {
-            return
+        if !(dataSource?.useButton ?? false) {
+            flowManager?.userDidCompleteInfo(forStep: currentStep, withPaymentInfo: selectedPaymentInfo)
         }
-        performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -82,33 +71,5 @@ class PaymentComponentTableViewController: UITableViewController, PaymentStepabl
             cell.accessoryType = .none
         }
     }
-    
-    
-//    func dataLoaded(_ error: Error?) {
-//        if error != nil {
-//            //TODO: Mostrar error
-//            return
-//        }
-//        
-//        if let dataSource = dataSource, dataSource.hasNoData, let identifier = viewInformation?.segueIdentifier {
-//                performSegue(withIdentifier: identifier, sender: self)
-//        }
-//        
-//        self.tableView.reloadData()
-//    }
-
-    
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
-        if var destination = segue.destination as? PaymentStepable {
-            if let nextStep = PaymentStepOrderManager.stepAfter(step: currentStep) {
-                destination.currentStep = nextStep
-                destination.selectedPayment = selectedPayment
-            }
-        }
-    }
-    
 
 }

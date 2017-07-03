@@ -16,6 +16,7 @@ class InstallmentsStep: PaymentStep {
     var delegate: StepDelegate?
     let service = InstallmentsService()
     var shouldBeOmitted: Bool = false
+    var isFinal = false
     
     func execute(withCurrentPaymentInfo paymentInfo: SelectedPaymentInfo?) {
         

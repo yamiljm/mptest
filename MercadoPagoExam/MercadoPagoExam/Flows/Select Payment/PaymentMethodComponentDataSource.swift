@@ -13,14 +13,14 @@ protocol PaymentMethodComponentDataSource: UITableViewDataSource, UITableViewDel
 
     var viewInformation: TableViewInformation {get}
     
-//    var dataLoaded: ((_ : Error?) -> Void)? {get set}
+//    var hasNoData: Bool {get}
     
-    var hasNoData: Bool {get}
+    //TODO: revisar
+    var useButton: Bool {get}
     
-//    func startLoadingData(withInfoFrom: SelectedPaymentInfo?)
+    init(withModels models: [Any]?)
     
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath)
-    
 }
 
 

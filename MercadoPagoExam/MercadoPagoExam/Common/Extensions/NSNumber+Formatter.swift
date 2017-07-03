@@ -1,4 +1,4 @@
-//
+4//
 //  Double+Formatter.swift
 //  MercadoPagoExam
 //
@@ -8,15 +8,27 @@
 
 import Foundation
 
-protocol DecimalDescriptable {
-    func fractionDigits(min: Int, max: Int, roundingMode: NumberFormatter.RoundingMode) -> String
-}
+//protocol DecimalDescriptable {
+//    func fractionDigits(min: Int, max: Int, roundingMode: NumberFormatter.RoundingMode) -> String
+//}
 
 extension Formatter {
     static let number = NumberFormatter()
 }
 
-extension DecimalDescriptable {
+//extension DecimalDescriptable {
+//    func fractionDigits(min: Int = 2, max: Int = 2, roundingMode: NumberFormatter.RoundingMode = .up) -> String {
+//        Formatter.number.minimumFractionDigits = min
+//        Formatter.number.maximumFractionDigits = max
+//        Formatter.number.roundingMode = roundingMode
+//        return Formatter.number.string(for: self) ?? ""
+//    }
+//}
+
+
+//TODO: revisar2
+extension NSNumber {//: DecimalDescriptable {
+
     func fractionDigits(min: Int = 2, max: Int = 2, roundingMode: NumberFormatter.RoundingMode = .up) -> String {
         Formatter.number.minimumFractionDigits = min
         Formatter.number.maximumFractionDigits = max
@@ -25,6 +37,11 @@ extension DecimalDescriptable {
     }
 }
 
-extension NSNumber : DecimalDescriptable {}
-
-extension Double: DecimalDescriptable {}
+extension Double { //: DecimalDescriptable {
+    func fractionDigits(min: Int = 2, max: Int = 2, roundingMode: NumberFormatter.RoundingMode = .up) -> String {
+        Formatter.number.minimumFractionDigits = min
+        Formatter.number.maximumFractionDigits = max
+        Formatter.number.roundingMode = roundingMode
+        return Formatter.number.string(for: self) ?? ""
+    }
+}

@@ -13,7 +13,7 @@
         <!--Amount Scene-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="amountViewController" id="BYZ-38-t0r" userLabel="Amount Scene" customClass="PaymentMethodAmountViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="amountViewController" id="BYZ-38-t0r" userLabel="Amount Scene" customClass="PaymentMethodAmountViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,13 +23,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingrese un monto" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="byo-tV-GJL">
-                                <rect key="frame" x="16" y="72" width="149" height="23"/>
+                                <rect key="frame" x="16" y="28" width="149" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i2w-aX-Yhr">
-                                <rect key="frame" x="61" y="117" width="253" height="48"/>
+                                <rect key="frame" x="61" y="73" width="253" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="Vpu-Iy-tXa"/>
                                 </constraints>
@@ -47,11 +47,11 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <state key="normal" title="Continuar"/>
                                 <connections>
-                                    <segue destination="TF7-D2-2St" kind="show" identifier="paymentMethod" id="eL3-DV-4ba"/>
+                                    <action selector="continueButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RsN-fK-Sgv"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Nb-Mf-6Xb">
-                                <rect key="frame" x="61" y="189" width="253" height="16"/>
+                                <rect key="frame" x="61" y="145" width="253" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="253" id="WJ8-Pj-qvu"/>
                                 </constraints>
@@ -98,7 +98,7 @@
         <!--Payment Method Type Scene-->
         <scene sceneID="q0E-wP-zlM">
             <objects>
-                <tableViewController id="TF7-D2-2St" userLabel="Payment Method Type Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="paymentMethodViewController" id="TF7-D2-2St" userLabel="Payment Method Type Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="Abs-e2-il6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
         <!--Card Issuer Scene-->
         <scene sceneID="w1M-F7-PGr">
             <objects>
-                <tableViewController id="Jf0-z9-Cab" userLabel="Card Issuer Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="cardIssuersViewController" id="Jf0-z9-Cab" userLabel="Card Issuer Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="gHn-Fz-1Zs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -160,7 +160,7 @@
         <!--Installments Scene-->
         <scene sceneID="gwq-HH-Xkg">
             <objects>
-                <viewController id="ypY-fl-9tG" userLabel="Installments Scene" customClass="InstallmentsViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="installmentsViewController" id="ypY-fl-9tG" userLabel="Installments Scene" customClass="InstallmentsViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RQB-ih-e2K"/>
                         <viewControllerLayoutGuide type="bottom" id="jbM-3Z-Ax7"/>
@@ -179,6 +179,7 @@
                                     <color key="titleShadowColor" red="0.98598768746555976" green="1" blue="0.99880329462468942" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="finishButtonPressed:" destination="ypY-fl-9tG" eventType="touchUpInside" id="Utq-f4-icm"/>
                                     <segue destination="thK-ms-NGu" kind="unwind" unwindAction="unwindToAmountScreenWithSegue:" id="Ohb-TB-NbZ"/>
                                 </connections>
                             </button>
@@ -220,12 +221,12 @@
             </objects>
             <point key="canvasLocation" x="4889" y="126"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Payment Navigation Controler-->
         <scene sceneID="Ge2-pE-EEz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Xyo-Fx-huf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="paymentNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Xyo-Fx-huf" customClass="PaymentNavigationControler" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="P0a-bK-Joc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="P0a-bK-Joc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.1019607843" green="0.61960784310000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -236,9 +237,6 @@
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DPM-6q-U5B"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03R-B4-guT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

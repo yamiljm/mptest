@@ -19,4 +19,8 @@ struct MercadoPagoError {
     enum service: Error {
         case invalidParameters
     }
+    
+    enum app: Error {
+        case internalError
+    }
 }

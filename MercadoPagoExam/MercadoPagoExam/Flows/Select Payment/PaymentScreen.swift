@@ -11,8 +11,11 @@ import Foundation
 protocol PaymentScreen {
     
     var flowManager: SelectPaymentFlowManager? {get set}
+    
     var dataSource: PaymentMethodComponentDataSource? {get set}
+    
     var selectedPaymentInfo: SelectedPaymentInfo? {get set}
+    
     var currentStep: PaymentStep? {get set}
     
 }

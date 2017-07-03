@@ -16,29 +16,13 @@ class CardIssuersDataSource: NSObject, PaymentMethodComponentDataSource {
     
     var models: [CardIssuer]?
     
-//    var service: CardIssuersService?
+    let useButton = false
     
-//    var dataLoaded: ((Error?) -> Void)?
-    
-    var hasNoData: Bool {
-        get {
-            return models?.isEmpty ?? true
-        }
+    required init(withModels models: [Any]?) {
+        self.models = models as? [CardIssuer]
     }
     
     //MARK: PaymentMethodComponentDataSource
-    
-//    func updateModels(_ cardIssuers: [CardIssuer]?, error: Error?) {
-//        if error != nil {
-//            //TODO: manejar error
-//            return
-//        }
-//        //TODO: revisar si poner waek a self
-//        self.models = cardIssuers
-//        DispatchQueue.main.async {
-//            self.dataLoaded?(error)
-//        }
-//    }
     
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath) {
         guard let cardIssuers = models, index.row < cardIssuers.count else {
@@ -60,16 +44,6 @@ class CardIssuersDataSource: NSObject, PaymentMethodComponentDataSource {
         }
         return cell
     }
-    
-    
-//    func startLoadingData(withInfoFrom payment: SelectedPaymentInfo?) {
-//        
-//        guard let id = payment?.method?.id else {
-//            return
-//        }
-//        
-//        service?.retriveCardIssuers(paymentMethodId: id)
-//    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models?.count ?? 0
