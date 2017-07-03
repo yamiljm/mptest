@@ -147,16 +147,32 @@ class SelectPaymentFlowManager: StepDelegate {
     }
     
     func presentPaymentInfoMessage(_ selectedPayment: SelectedPaymentInfo) {
-        
         //TODO: internacionalizar title
         
-        let alertController = UIAlertController(title: "Pago seleccionado", message: nil, preferredStyle: .alert)
+        guard let description = selectedPaymentInfo.attributedDescription() else {
+            showErrorScreen(MercadoPagoError.app.internalError)
+            return
+        }
+        
+        presentAlertController(title: "Pago seleccionado", attributedMessage: description)
+        selectedPaymentInfo.clear()
+    }
+    
+    func showErrorScreen(_ error: Error?=nil) {
+        presentAlertController(title: "Error", message: error?.localizedDescription)
+    }
+    
+    private func presentAlertController(title: String, message: String?=nil, attributedMessage: NSAttributedString?=nil) {
+        
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let okAction = UIAlertAction(title: "OK", style: .default)
         
         alertController.addAction(okAction)
         
-        alertController.setValue(selectedPayment.attributedDescription(), forKey: "attributedMessage")
+        if let attributedMessage = attributedMessage {
+            alertController.setValue(attributedMessage, forKey: "attributedMessage")
+        }
         
         navigationController?.present(alertController, animated: true, completion: nil)
     }
@@ -169,7 +185,6 @@ class SelectPaymentFlowManager: StepDelegate {
         guard let view = navigationController?.topViewController?.view else {
             return
         }
-        
         ProgressView.shared.start(intoView: view)
     }
     
@@ -177,8 +192,4 @@ class SelectPaymentFlowManager: StepDelegate {
         ProgressView.shared.stop()
     }
     
-    func showErrorScreen(_ error: Error?=nil) {
-        
-        //TODO completar
-    }
 }

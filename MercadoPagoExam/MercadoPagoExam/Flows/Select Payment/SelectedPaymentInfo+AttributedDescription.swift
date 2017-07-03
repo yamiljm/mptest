@@ -53,11 +53,10 @@ extension SelectedPaymentInfo {
         }
     }
     
-    func attributedDescription() -> NSAttributedString {
+    func attributedDescription() -> NSAttributedString? {
         
         guard let amount = self.amount, let methodName = self.method?.name, let payerCost = self.installmentsPayerCost else {
-            //TODO: handle this error
-            return NSAttributedString(string: "UPSS")
+            return nil
         }
         
         let newMessage = NSMutableAttributedString()

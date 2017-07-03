@@ -20,4 +20,13 @@ final class SelectedPaymentInfo {
     func hasAnAmount() -> Bool {
         return amount != nil 
     }
+    
+    func clear() {
+        paymentType = .creditCard
+        amount = nil
+        method = nil
+        cardIssuer = nil
+        installmentsPayerCost = nil
+        isComplete = false
+    }
 }
