@@ -21,6 +21,8 @@ protocol PaymentMethodComponentDataSource: UITableViewDataSource, UITableViewDel
     init(withModels models: [Any]?)
     
     func completePaymentInfo(intoPayment payment: SelectedPaymentInfo?, withIndexPath index: IndexPath)
+    
+    func removePaymentInfo(from paymentInfo: SelectedPaymentInfo)
 }
 
 

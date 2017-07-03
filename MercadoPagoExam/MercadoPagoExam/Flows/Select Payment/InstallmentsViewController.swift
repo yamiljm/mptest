@@ -18,6 +18,7 @@ class InstallmentsViewController: UIViewController, PaymentScreen {
     var currentStep: PaymentStep?
     var dataSource: PaymentMethodComponentDataSource?
     weak var flowManager: SelectPaymentFlowManager?
+    private weak var tableView: UITableView?
     
     // MARK: - Navigation
 
@@ -30,6 +31,7 @@ class InstallmentsViewController: UIViewController, PaymentScreen {
             tableViewController.currentStep = currentStep
             tableViewController.selectedPaymentInfo = selectedPaymentInfo
             tableViewController.dataSource = dataSource
+            self.tableView = tableViewController.tableView
         }
     }
     
@@ -41,5 +43,13 @@ class InstallmentsViewController: UIViewController, PaymentScreen {
         }
     }
     
+    override func didMove(toParentViewController parent: UIViewController?) {
+        super.didMove(toParentViewController: parent)
+        
+        if let selectedPayment = selectedPaymentInfo, parent == self.navigationController?.parent {
+            dataSource?.removePaymentInfo(from: selectedPayment)
+        }
+    }
 
 }
+

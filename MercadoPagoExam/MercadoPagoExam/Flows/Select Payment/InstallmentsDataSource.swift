@@ -35,6 +35,12 @@ class InstallmentsDataSource: NSObject, PaymentMethodComponentDataSource {
         payment?.installmentsPayerCost = payerCosts[index.row]
     }
     
+    func removePaymentInfo(from paymentInfo: SelectedPaymentInfo) {
+        if !paymentInfo.isComplete {
+            paymentInfo.installmentsPayerCost = nil
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: viewInformation.cellIdentifier, for: indexPath) as? PaymentComponentCellWithoutImage else {

@@ -33,6 +33,12 @@ class PaymentMethodDataSource: NSObject, PaymentMethodComponentDataSource {
         payment?.method = paymentMethods[index.row]
     }
     
+    func removePaymentInfo(from paymentInfo: SelectedPaymentInfo) {
+        if !paymentInfo.isComplete {
+            paymentInfo.method = nil
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: viewInformation.cellIdentifier, for: indexPath) as? PaymentComponentWithImageCell else {
             return UITableViewCell()
