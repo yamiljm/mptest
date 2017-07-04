@@ -73,6 +73,7 @@
                     <connections>
                         <outlet property="amountContainer" destination="gyp-iQ-vm2" id="32H-QP-1ha"/>
                         <outlet property="continueButton" destination="VEY-bh-VRy" id="dXo-Sp-Qhk"/>
+                        <outlet property="keyboardHeightLayoutConstraint" destination="vgi-zs-j6x" id="fMP-OM-8xX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -231,10 +232,14 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="-570.76461769115451"/>
         </scene>
-        <!--Numeric Text Field View Controller-->
+        <!--Numeric Input Field View Controller-->
         <scene sceneID="Yyp-d9-kpO">
             <objects>
-                <viewController id="LV5-Hx-wPt" customClass="NumericTextFieldViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="LV5-Hx-wPt" customClass="NumericInputFieldViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="XUX-ha-2cf"/>
+                        <viewControllerLayoutGuide type="bottom" id="up0-1y-LIa"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iho-eQ-caG">
                         <rect key="frame" x="0.0" y="0.0" width="303" height="65"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

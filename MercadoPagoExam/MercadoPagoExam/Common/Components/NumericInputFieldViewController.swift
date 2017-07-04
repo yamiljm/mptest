@@ -1,5 +1,5 @@
 //
-//  NumericTextFieldViewController.swift
+//  NumericInputFieldViewController.swift
 //  MercadoPagoExam
 //
 //  Created by Yamil Jalil Maluf on 3/7/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NumericTextFieldViewController: UIViewController, UITextFieldDelegate {
+class NumericInputFieldViewController: UIViewController, UITextFieldDelegate {
     
     private var formatter: NumberFormatter?
     private let minimumAmount = NSNumber(value: 0)
@@ -41,6 +41,14 @@ class NumericTextFieldViewController: UIViewController, UITextFieldDelegate {
         stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
     }
     
+    override func becomeFirstResponder() -> Bool {
+        return amountField.becomeFirstResponder()
+    }
+    
+    override func resignFirstResponder() -> Bool {
+        return amountField.resignFirstResponder()
+    }
+    
     private func createStackView(withView views: [UIView]) -> UIStackView {
         
         let stackView = UIStackView(arrangedSubviews: views)
@@ -60,6 +68,7 @@ class NumericTextFieldViewController: UIViewController, UITextFieldDelegate {
         textField.borderStyle = .line
         textField.layer.borderColor = UIColor.lightGray.cgColor
         textField.layer.borderWidth = 1
+        textField.keyboardType = .decimalPad
     }
     
     private func configureErroLabel(_ errorLabel: UILabel) {
