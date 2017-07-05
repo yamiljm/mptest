@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -19,27 +20,37 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEV-SD-Fqd" userLabel="Title">
-                        <rect key="frame" x="122" y="12" width="223" height="21"/>
+                        <rect key="frame" x="75" y="12" width="270" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wiT-dx-Yum" userLabel="Card Image">
-                        <rect key="frame" x="12" y="4" width="90" height="36"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eZq-pD-Xe5">
+                        <rect key="frame" x="8" y="3" width="55" height="38"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wiT-dx-Yum" userLabel="Card Image">
+                                <rect key="frame" x="7" y="6.5" width="40" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="7Xg-vx-Whv"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="35" id="NuV-nc-vr6"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="40" id="aRt-Dp-BgZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.98818359374999998" green="0.98818359374999998" blue="0.98818359374999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="5PT-Ue-sjO"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="36" id="HZB-sz-ShU"/>
-                            <constraint firstAttribute="width" constant="90" id="b5E-TD-zpE"/>
-                            <constraint firstAttribute="height" constant="36" id="yVO-GV-Nqv"/>
+                            <constraint firstAttribute="width" constant="55" id="7aB-gz-bI0"/>
+                            <constraint firstItem="wiT-dx-Yum" firstAttribute="centerY" secondItem="eZq-pD-Xe5" secondAttribute="centerY" id="Ktu-78-L5M"/>
+                            <constraint firstAttribute="height" constant="38" id="X2Z-iz-ZfR"/>
+                            <constraint firstItem="wiT-dx-Yum" firstAttribute="centerX" secondItem="eZq-pD-Xe5" secondAttribute="centerX" id="i9f-0e-rYr"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="wiT-dx-Yum" firstAttribute="leading" secondItem="p21-Fm-SMY" secondAttribute="leading" constant="12" id="Hb6-3d-FHK"/>
-                    <constraint firstItem="wiT-dx-Yum" firstAttribute="top" secondItem="p21-Fm-SMY" secondAttribute="top" constant="4" id="UUd-Xl-y8w"/>
-                    <constraint firstItem="KEV-SD-Fqd" firstAttribute="leading" secondItem="wiT-dx-Yum" secondAttribute="trailing" constant="20" id="bpL-9U-I6B"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="eZq-pD-Xe5" secondAttribute="leading" id="C9f-wZ-tRk"/>
                     <constraint firstItem="KEV-SD-Fqd" firstAttribute="centerY" secondItem="p21-Fm-SMY" secondAttribute="centerY" id="cAU-0U-7X5"/>
-                    <constraint firstAttribute="bottom" secondItem="wiT-dx-Yum" secondAttribute="bottom" constant="4" id="rpR-J3-r7x"/>
+                    <constraint firstItem="KEV-SD-Fqd" firstAttribute="leading" secondItem="wiT-dx-Yum" secondAttribute="trailing" constant="20" id="jIL-iO-Nc9"/>
+                    <constraint firstItem="eZq-pD-Xe5" firstAttribute="centerY" secondItem="p21-Fm-SMY" secondAttribute="centerY" id="pOW-wH-Ddu"/>
                 </constraints>
             </tableViewCellContentView>
             <constraints>
@@ -47,6 +58,7 @@
             </constraints>
             <connections>
                 <outlet property="cardImage" destination="wiT-dx-Yum" id="a6E-lu-Zj9"/>
+                <outlet property="cardViewContainer" destination="eZq-pD-Xe5" id="4HH-yJ-HKM"/>
                 <outlet property="title" destination="KEV-SD-Fqd" id="8Oh-t6-7ng"/>
             </connections>
             <point key="canvasLocation" x="48.5" y="460"/>

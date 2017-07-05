@@ -10,6 +10,7 @@ import UIKit
 
 class PaymentComponentWithImageCell: UITableViewCell {
     
+    @IBOutlet weak var cardViewContainer: UIView!
     @IBOutlet weak var cardImage: UIImageView!
 
     @IBOutlet weak var title: UILabel!
@@ -20,6 +21,11 @@ class PaymentComponentWithImageCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
         cardImage.layer.cornerRadius = cornerRadius
+        cardViewContainer.layer.cornerRadius = CGFloat(5)
+//        cardViewContainer.layer   layer.borderStyle = .line
+        cardViewContainer.layer.borderColor = UIColor.lightGray.cgColor
+        cardViewContainer.layer.borderWidth = 0.5
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
