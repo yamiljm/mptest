@@ -161,10 +161,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-iA-qgB">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyn-iA-qgB">
                                 <rect key="frame" x="0.0" y="603" width="375" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.1019607843" green="0.61960784310000006" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="RnB-zC-N5G"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <color key="tintColor" red="0.98598768749999999" green="1" blue="0.99880329459999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Finalizar">
@@ -175,15 +177,23 @@
                                     <segue destination="thK-ms-NGu" kind="unwind" unwindAction="unwindToAmountScreenWithSegue:" id="Ohb-TB-NbZ"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pQF-Yp-QIs">
-                                <rect key="frame" x="0.0" y="72" width="375" height="523"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQF-Yp-QIs">
+                                <rect key="frame" x="0.0" y="20" width="375" height="583"/>
                                 <connections>
                                     <segue destination="YI3-ow-zfP" kind="embed" identifier="installmentsTable" id="yvV-H4-IzW"/>
                                 </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yyn-iA-qgB" firstAttribute="leading" secondItem="pfA-FZ-js1" secondAttribute="leading" id="Bkg-ss-kAW"/>
+                            <constraint firstItem="jbM-3Z-Ax7" firstAttribute="top" secondItem="yyn-iA-qgB" secondAttribute="bottom" id="Hlg-gg-f3G"/>
+                            <constraint firstAttribute="trailing" secondItem="yyn-iA-qgB" secondAttribute="trailing" id="Nek-by-PsS"/>
+                            <constraint firstAttribute="trailing" secondItem="pQF-Yp-QIs" secondAttribute="trailing" id="Zf5-By-Ton"/>
+                            <constraint firstItem="yyn-iA-qgB" firstAttribute="top" secondItem="pQF-Yp-QIs" secondAttribute="bottom" id="iOf-5y-eLm"/>
+                            <constraint firstItem="pQF-Yp-QIs" firstAttribute="top" secondItem="RQB-ih-e2K" secondAttribute="bottom" id="ssH-PA-e5j"/>
+                            <constraint firstItem="pQF-Yp-QIs" firstAttribute="leading" secondItem="pfA-FZ-js1" secondAttribute="leading" id="yME-MJ-lpJ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="finishButton" destination="yyn-iA-qgB" id="uAp-Kx-3GU"/>
@@ -200,7 +210,7 @@
             <objects>
                 <tableViewController id="YI3-ow-zfP" userLabel="Installments Table Scene" customClass="PaymentComponentTableViewController" customModule="MercadoPagoExam" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LzP-tA-hdI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="523"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="583"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <connections>
