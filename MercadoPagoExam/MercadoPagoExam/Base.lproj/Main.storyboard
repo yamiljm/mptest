@@ -124,6 +124,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.98818359369999997" green="0.98818359369999997" blue="0.98818359369999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="sectionIndexTrackingBackgroundColor" red="0.076674006879329681" green="0.68404597043991089" blue="0.85536319017410278" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="paymentComponentWithImageCell" id="c0Z-4d-EGk" customClass="PaymentComponentWithImageCell" customModule="MercadoPagoExam" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>

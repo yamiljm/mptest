@@ -81,5 +81,11 @@ class PaymentComponentTableViewController: UITableViewController, PaymentScreen 
             dataSource?.removePaymentInfo(from: selectedPayment)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        view.tintColor = UIColor(colorLiteralRed: 20/255, green: 174/255, blue: 218/255, alpha: 0.8)
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.textColor = UIColor.white
+    }
 
 }
