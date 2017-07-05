@@ -16,13 +16,7 @@ class NumericInputFieldViewController: UIViewController, UITextFieldDelegate {
     var amountField = UITextField()
     var errorLabel = UILabel()
     
-    var value: Double? {
-        didSet {
-            if let value = value {
-                amountField.text = formatter?.string(from: value as NSNumber)
-            }
-        }
-    }
+    var value: Double?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +33,13 @@ class NumericInputFieldViewController: UIViewController, UITextFieldDelegate {
         let margins = view.layoutMarginsGuide
         stackView.trailingAnchor.constraint(equalTo: margins.trailingAnchor).isActive = true
         stackView.leadingAnchor.constraint(equalTo: margins.leadingAnchor).isActive = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let value = value {
+            amountField.text = formatter?.string(from: value as NSNumber)
+        }
     }
     
     override func becomeFirstResponder() -> Bool {
@@ -112,6 +113,8 @@ class NumericInputFieldViewController: UIViewController, UITextFieldDelegate {
         } else {
             textField.text = formatter?.string(from: validNumberFromCurrentText)
         }
+        
+        value = validNumberFromCurrentText.doubleValue
         
         return  false
     }

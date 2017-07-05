@@ -104,7 +104,8 @@ final class PaymentMethodsAPIConnector: MercadoPagoAPIConnector {
         var urlComponents = URLComponents(url: paymentMethodBaseURL, resolvingAgainstBaseURL: true)
         
         let paymentMethodIdItem = URLQueryItem(name: Params.paymentMethodId, value: paymentMethodId)
-        let amountItem = URLQueryItem(name: Params.amount, value: amount.fractionDigits())
+        let amountItem = URLQueryItem(name: Params.amount, value: String(amount))
+        
         urlComponents?.queryItems?.append(contentsOf: [paymentMethodIdItem, amountItem])
         
         if let issuerId = issuerId {
