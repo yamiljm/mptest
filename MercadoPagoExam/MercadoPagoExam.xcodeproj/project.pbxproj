@@ -51,7 +51,6 @@
 		C63C8C251EF8926E000A76D5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C241EF8926E000A76D5 /* Logger.swift */; };
 		C65D4D611EF8BB5C0097A119 /* MercadoPagoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C63C8C1B1EF88144000A76D5 /* MercadoPagoError.swift */; };
 		C67C207E1EF60D6900C85958 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67C207D1EF60D6900C85958 /* AppDelegate.swift */; };
-		C67C20801EF60D6900C85958 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67C207F1EF60D6900C85958 /* ViewController.swift */; };
 		C67C20831EF60D6900C85958 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67C20811EF60D6900C85958 /* Main.storyboard */; };
 		C67C20851EF60D6900C85958 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C67C20841EF60D6900C85958 /* Assets.xcassets */; };
 		C67C20881EF60D6900C85958 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C67C20861EF60D6900C85958 /* LaunchScreen.storyboard */; };
@@ -134,7 +133,6 @@
 		C63C8C241EF8926E000A76D5 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		C67C207A1EF60D6800C85958 /* MercadoPagoExam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MercadoPagoExam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C67C207D1EF60D6900C85958 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C67C207F1EF60D6900C85958 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C67C20821EF60D6900C85958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C67C20841EF60D6900C85958 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C67C20871EF60D6900C85958 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -372,7 +370,6 @@
 				C63C8BFB1EF6D4EA000A76D5 /* Networking */,
 				C63C8C021EF6D5A4000A76D5 /* Services */,
 				C67C207D1EF60D6900C85958 /* AppDelegate.swift */,
-				C67C207F1EF60D6900C85958 /* ViewController.swift */,
 				C67C20811EF60D6900C85958 /* Main.storyboard */,
 				C67C20841EF60D6900C85958 /* Assets.xcassets */,
 				C67C20861EF60D6900C85958 /* LaunchScreen.storyboard */,
@@ -671,7 +668,6 @@
 				C698C1761F099AA70080BDE7 /* CardIssuerStep.swift in Sources */,
 				C62CF7521EFC84CE00091503 /* MercadoPagoAPIConnector.swift in Sources */,
 				C62CF7571EFCB32300091503 /* NSNumber+Formatter.swift in Sources */,
-				C67C20801EF60D6900C85958 /* ViewController.swift in Sources */,
 				C63C8C1E1EF88B77000A76D5 /* LoggerType.swift in Sources */,
 				C63C8C151EF85700000A76D5 /* Environmentable.swift in Sources */,
 				C698C16E1F0980D70080BDE7 /* AmountPaymentStep.swift in Sources */,

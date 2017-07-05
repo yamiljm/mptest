@@ -75,4 +75,19 @@ struct URLSessionNetworkExecutor: NetworkExecutor {
         
     }
     
+    static func cancelCurrentRequests() {
+        
+        URLSession.shared.getTasksWithCompletionHandler { (dataTasks: [URLSessionDataTask], uploadTasks: [URLSessionUploadTask], downloadTasks: [URLSessionDownloadTask]) in
+            
+            if dataTasks.isEmpty {
+                return
+            }
+            
+            dataTasks.forEach({ (task: URLSessionDataTask) in
+                task.cancel()
+            })
+            
+        }
+    }
+    
 }

@@ -15,4 +15,6 @@ protocol NetworkExecutor {
     
     func execute(request: URLRequest, completionHandler: @escaping ([[String : Any]]?, Error?) -> Void)
     
+    static func cancelCurrentRequests()
+    
 }

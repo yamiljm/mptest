@@ -13,7 +13,7 @@ import UIKit
 class SelectPaymentFlowManager: StepDelegate {
     
     weak var navigationController: UINavigationController?
-
+    
     var selectedPaymentInfo = SelectedPaymentInfo()
     
     private var stepsManager = PaymentStepOrderManager()
@@ -45,6 +45,53 @@ class SelectPaymentFlowManager: StepDelegate {
         }
     }
     
+    func userDidCompleteInfo(forStep currentStep: PaymentStep?, withPaymentInfo updatedPaymentInfo: SelectedPaymentInfo?) {
+        
+        guard let currentStep = currentStep else {
+            showErrorScreen(MercadoPagoError.app.internalError)
+            return
+        }
+        
+        executeNextStep(afterStep: currentStep, withCurrentPaymentInfo: selectedPaymentInfo)
+    }
+    
+    func presentPaymentInfoMessage(_ selectedPayment: SelectedPaymentInfo) {
+        //TODO: internacionalizar title y sacar a una constante
+        
+        guard let description = selectedPaymentInfo.attributedDescription() else {
+            showErrorScreen(MercadoPagoError.app.internalError)
+            return
+        }
+        
+        presentAlertController(title: "Pago seleccionado", attributedMessage: description)
+        selectedPaymentInfo.clear()
+    }
+    
+    func stepWillRetrieveData() {
+        showLoadingScreen()
+    }
+    
+    func showLoadingScreen() {
+        guard let view = navigationController?.topViewController?.view else {
+            return
+        }
+        ProgressView.shared.start(intoView: view)
+    }
+    
+    func dismissLoadingScreen() {
+        ProgressView.shared.stop()
+    }
+    
+    func cancelStep() {
+        //TODO: sería conveniente obtener el NetworkExecutor de otra manera,
+        //para no forzar una implementación en particular.
+        URLSessionNetworkExecutor.cancelCurrentRequests()
+        
+        //TODO: falta la lógica para cancelar el step actual si es que se está cargando
+
+    }
+    
+    
     private func present(step: PaymentStep, withModels models: [Any]?=nil){
         
         dismissLoadingScreen()
@@ -59,16 +106,6 @@ class SelectPaymentFlowManager: StepDelegate {
         case .installments:
             showInstallmentsScreen(currentStep: step, withModels: models)
         }
-    }
-    
-    func userDidCompleteInfo(forStep currentStep: PaymentStep?, withPaymentInfo updatedPaymentInfo: SelectedPaymentInfo?) {
-        
-        guard let currentStep = currentStep else {
-            showErrorScreen(MercadoPagoError.app.internalError)
-            return
-        }
-        
-        executeNextStep(afterStep: currentStep, withCurrentPaymentInfo: selectedPaymentInfo)
     }
     
     private func executeNextStep(afterStep currentStep: PaymentStep?, withCurrentPaymentInfo paymentInfo: SelectedPaymentInfo?) {
@@ -146,18 +183,6 @@ class SelectPaymentFlowManager: StepDelegate {
         navigationController?.pushViewController(installmentsViewController, animated: true)
     }
     
-    func presentPaymentInfoMessage(_ selectedPayment: SelectedPaymentInfo) {
-        //TODO: internacionalizar title
-        
-        guard let description = selectedPaymentInfo.attributedDescription() else {
-            showErrorScreen(MercadoPagoError.app.internalError)
-            return
-        }
-        
-        presentAlertController(title: "Pago seleccionado", attributedMessage: description)
-        selectedPaymentInfo.clear()
-    }
-    
     func showErrorScreen(_ error: Error?=nil) {
         presentAlertController(title: "Error", message: error?.localizedDescription)
     }
@@ -175,21 +200,6 @@ class SelectPaymentFlowManager: StepDelegate {
         }
         
         navigationController?.present(alertController, animated: true, completion: nil)
-    }
-    
-    func stepWillRetrieveData() {
-        showLoadingScreen()
-    }
-    
-    func showLoadingScreen() {
-        guard let view = navigationController?.topViewController?.view else {
-            return
-        }
-        ProgressView.shared.start(intoView: view)
-    }
-    
-    func dismissLoadingScreen() {
-        ProgressView.shared.stop()
     }
     
 }

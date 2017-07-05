@@ -74,6 +74,7 @@ class PaymentComponentTableViewController: UITableViewController, PaymentScreen 
     }
     
     override func didMove(toParentViewController parent: UIViewController?) {
+    
         super.didMove(toParentViewController: parent)
         
         if let selectedPayment = selectedPaymentInfo, parent == self.navigationController?.parent {
