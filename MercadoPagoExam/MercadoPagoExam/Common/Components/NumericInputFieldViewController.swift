@@ -134,7 +134,7 @@ class NumericInputFieldViewController: UIViewController, UITextFieldDelegate {
     
     private func createFormatter() -> NumberFormatter {
         let formatter = NumberFormatter()
-        formatter.locale = AppConfiguration.shared.locale()
+        formatter.locale = Locale.current
         formatter.minimum = 0
         formatter.numberStyle = .currency
         formatter.maximumFractionDigits = 9
@@ -147,7 +147,9 @@ class NumericInputFieldViewController: UIViewController, UITextFieldDelegate {
 fileprivate extension String {
     
     func isDecimalSeparator() -> Bool {
-        let decimalSeparator = AppConfiguration.shared.locale().decimalSeparator ?? "."
+        guard let decimalSeparator = Locale.current.decimalSeparator else {
+            return false
+        }
         return self == decimalSeparator
     }
     
@@ -156,7 +158,9 @@ fileprivate extension String {
     }
     
     func containsDecimalSeparator() -> Bool {
-        let decimalSeparator = AppConfiguration.shared.locale().decimalSeparator ?? "."
+        guard let decimalSeparator = Locale.current.decimalSeparator else {
+            return false
+        }
         return self.contains(decimalSeparator)
     }
 }

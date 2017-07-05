@@ -15,11 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-    
-        //TODO: pasar esto a algun configurador
-        UserDefaults.standard.set(AppConfiguration.shared.language, forKey: "AppleLanguages")
-    
+        
         return true
     }
 
