@@ -14,6 +14,7 @@ class PaymentComponentTableViewController: UITableViewController, PaymentScreen 
     var currentStep: PaymentStep?
     var dataSource: PaymentMethodComponentDataSource?
     weak var flowManager: SelectPaymentFlowManager?
+    private let defaultHeaderHeight = CGFloat(48)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -49,7 +50,7 @@ class PaymentComponentTableViewController: UITableViewController, PaymentScreen 
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         //TODO: sacar a constantes
-        return CGFloat(48.0)
+        return defaultHeaderHeight
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

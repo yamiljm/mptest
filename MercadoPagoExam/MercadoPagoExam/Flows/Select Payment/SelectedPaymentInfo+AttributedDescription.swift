@@ -10,6 +10,16 @@ import UIKit
 
 extension SelectedPaymentInfo {
     
+    
+    //TODO: esto habría que internacionalizarlo
+    private struct Texts {
+        static let amount = "Importe"
+        static let paymentMethod = "Medio de pago"
+        static let issuer = "Emisor"
+        static let installments = "Cuotas"
+        static let separator = ": "
+    }
+    
     var fontSize: CGFloat {
         get {
             return UIFont.systemFontSize
@@ -34,7 +44,7 @@ extension SelectedPaymentInfo {
     
     var separator: String {
         get {
-            return ": "
+            return Texts.separator
         }
     }
     
@@ -63,20 +73,20 @@ extension SelectedPaymentInfo {
         
         newMessage.append(newLine)
         
-        newMessage.append(createMessagePart(title: "Importe", text: amount.fractionDigits()))
+        newMessage.append(createMessagePart(title: Texts.amount, text: amount.fractionDigits()))
         
         newMessage.append(newLine)
         
-        newMessage.append(createMessagePart(title: "Medio de pago", text: methodName))
+        newMessage.append(createMessagePart(title: Texts.paymentMethod, text: methodName))
         
         newMessage.append(newLine)
         
         if let issuerName = self.cardIssuer?.name {
-            newMessage.append(createMessagePart(title: "Emisor", text: issuerName))
+            newMessage.append(createMessagePart(title: Texts.issuer, text: issuerName))
             newMessage.append(newLine)
         }
         
-        newMessage.append(createMessagePart(title: "Cuotas", text: payerCost.recommendedMessage))
+        newMessage.append(createMessagePart(title: Texts.installments, text: payerCost.recommendedMessage))
         
         return newMessage
         
