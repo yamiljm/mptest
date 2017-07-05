@@ -91,7 +91,6 @@ class SelectPaymentFlowManager: StepDelegate {
 
     }
     
-    
     private func present(step: PaymentStep, withModels models: [Any]?=nil){
         
         dismissLoadingScreen()
@@ -184,6 +183,7 @@ class SelectPaymentFlowManager: StepDelegate {
     }
     
     func showErrorScreen(_ error: Error?=nil) {
+        //TODO: sacar Erro a constante/internacionalizar
         presentAlertController(title: "Error", message: error?.localizedDescription)
     }
     
@@ -191,6 +191,7 @@ class SelectPaymentFlowManager: StepDelegate {
         
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
+        //TODO: sacar OK a constante/internacionalizar
         let okAction = UIAlertAction(title: "OK", style: .default)
         
         alertController.addAction(okAction)

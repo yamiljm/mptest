@@ -12,10 +12,7 @@ import UIKit
 protocol PaymentMethodComponentDataSource: UITableViewDataSource, UITableViewDelegate {
 
     var viewInformation: TableViewInformation {get}
-    
-//    var hasNoData: Bool {get}
-    
-    //TODO: revisar
+
     var useButton: Bool {get}
     
     init(withModels models: [Any]?)

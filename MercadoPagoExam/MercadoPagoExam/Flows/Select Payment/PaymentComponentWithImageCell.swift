@@ -19,19 +19,12 @@ class PaymentComponentWithImageCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
         cardImage.layer.cornerRadius = cornerRadius
         cardViewContainer.layer.cornerRadius = CGFloat(5)
-//        cardViewContainer.layer   layer.borderStyle = .line
         cardViewContainer.layer.borderColor = UIColor.lightGray.cgColor
         cardViewContainer.layer.borderWidth = 0.5
 
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
 
 }

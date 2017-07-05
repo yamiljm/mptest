@@ -21,6 +21,8 @@ class MercadoPagoAPIConnector : APIConnector, Environmentable {
     var endpoint = PaymentMethodsAPIConnector.currentAPIEnvironment().endpoint()
 
     init() {
+        //Punto en donde se puede "inyectar" distintas implementacions
+        //de la capa de networking
         networkExecutor = URLSessionNetworkExecutor()
     }
     
@@ -28,8 +30,6 @@ class MercadoPagoAPIConnector : APIConnector, Environmentable {
     func httpHeaders() -> [String : String]? {
         
         //TODO, agregar headers en común a la api de mercado pago
-        
-        
         return [:]
     }
     

@@ -19,7 +19,7 @@ final class CardIssuersService {
         }
         
         let onSucces = { (models: [CardIssuer]?) -> Void in
-            //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al delegate
+            //Acá se podría realizar validaciones sobre los modelos antes de pasarlos al completion
             completion(models, nil)
         }
         

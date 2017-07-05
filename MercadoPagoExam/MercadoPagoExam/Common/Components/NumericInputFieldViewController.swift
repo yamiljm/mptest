@@ -77,7 +77,8 @@ class NumericInputFieldViewController: UIViewController, UITextFieldDelegate {
         errorLabel.textAlignment = .left
         errorLabel.textColor = UIColor.red
         errorLabel.isHidden = true
-        errorLabel.text = "El monto debe ser mayo a cero" //TODO:Internacionalizar
+        //TODO:Internacionalizar
+        errorLabel.text = "El monto debe ser mayo a cero"
 
     }
     

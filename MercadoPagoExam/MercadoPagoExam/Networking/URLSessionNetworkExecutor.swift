@@ -20,7 +20,7 @@ struct URLSessionNetworkExecutor: NetworkExecutor {
                 return
             }
             
-            //TODO chequear errores de http en response
+            //TODO chequear y manejar errores de http en response
             
             guard let data = data else {
                 completionHandler(nil, nil)
@@ -52,7 +52,7 @@ struct URLSessionNetworkExecutor: NetworkExecutor {
                 return
             }
             
-            //TODO chequear errores de http en response
+            //TODO chequear y manejar errores de http en response
             
             guard let data = data else {
                 completionHandler(nil, nil)

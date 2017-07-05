@@ -18,7 +18,7 @@ class PaymentMethodAmountViewController: UIViewController, PaymentScreen {
     var currentStep: PaymentStep?
     var dataSource: PaymentMethodComponentDataSource?
     weak var flowManager: SelectPaymentFlowManager?
-    var amountInput: NumericInputFieldViewController?
+    private var amountInput: NumericInputFieldViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +38,6 @@ class PaymentMethodAmountViewController: UIViewController, PaymentScreen {
         }
         
         if selectedPayment.hasAnAmount() {
-            //TODO: revisar
             _ = amountInput?.resignFirstResponder()
         } else {
             amountInput?.value = 0
