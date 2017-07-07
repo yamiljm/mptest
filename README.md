@@ -1,5 +1,5 @@
 # Algunas consideraciones:
-- La versión final está en el branch _master_ (o el tag 1.0.0)
+- La versión entregada está en el branch _master_ (o el tag 1.0.0)
 - Desarrollado en Xcode 8.3.3
 - Fue probado en iOS 10.3
 - Para el manejo de librerías se usa Cocoa pods. La librerías utilizadas son dos: 
